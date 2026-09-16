@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дашборд задач Bitrix24</title>
+<style>
+  :root {
+    --bg: #f5f5f3;
+    --card: #ffffff;
+    --border: #e2e1dc;
+    --text: #1a1a18;
+    --text-muted: #6b6a64;
+    --accent: #2a78d6;
+    --danger: #d03b3b;
+    --success: #1baf7a;
+    --warning: #eda100;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17171533;
+      --bg: #131311;
+      --card: #1d1d1a;
+      --border: #33322e;
+      --text: #f0efec;
+      --text-muted: #a3a29b;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  .wrap { max-width: 1200px; margin: 0 auto; }
+  h1 { font-size: 22px; font-weight: 600; margin: 0 0 4px; }
+  .subtitle { color: var(--text-muted); font-size: 14px; margin: 0 0 24px; }
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .kpi {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .kpi .label { font-size: 13px; color: var(--text-muted); margin-bottom: 6px; }
+  .kpi .value { font-size: 26px; font-weight: 600; }
+  .kpi .value.danger { color: var(--danger); }
+  .kpi .value.success { color: var(--success); }
+  section { margin-bottom: 32px; }
+  h2 { font-size: 16px; font-weight: 600; margin: 0 0 12px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .chart-wrap { position: relative; height: 300px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+  th { color: var(--text-muted); font-weight: 500; }
+  tr:last-child td { border-bottom: none; }
+  .pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .pill.ok { background: rgba(27,175,122,0.15); color: var(--success); }
+  .pill.bad { background: rgba(208,59,59,0.15); color: var(--danger); }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .updated { color: var(--text-muted); font-size: 12px; margin-top: 24px; text-align: center; }
+  .loading, .error { text-align: center; padding: 60px 20px; color: var(--text-muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Дашборд задач сотрудников</h1>
+  <p class="subtitle" id="period-label">Загрузка данных...</p>
+
+  <div id="content" style="display:none;">
+    <div class="kpi-row" id="kpi-row"></div>
+
+    <section>
+      <h2>Создано / завершено по дням</h2>
+      <div class="card">
+        <div class="chart-wrap"><canvas id="trendChart" role="img" aria-label="Динамика созданных и завершённых задач по дням"></canvas></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Топ-10 отделов по нагрузке</h2>
+      <div class="card">
+        <div class="chart-wrap"><canvas id="deptChart" role="img" aria-label="Количество задач по отделам"></canvas></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Просроченные сейчас (топ-15)</h2>
+      <div class="card">
+        <table id="overdue-table">
+          <thead><tr><th>Задача</th><th>Сотрудник</th><th>Отдел</th><th>Дней просрочки</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Все сотрудники</h2>
+      <div class="card" style="overflow-x:auto;">
+        <table id="emp-table">
+          <thead><tr><th>Отдел</th><th>Сотрудник</th><th>Всего</th><th>Завершено</th><th>% завершено</th><th>Просрочено</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <div id="loading" class="loading">Загрузка данных…</div>
+  <p class="updated" id="updated-label"></p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+fetch('data.json?t=' + Date.now())
+  .then(r => {
+    if (!r.ok) throw new Error('data.json не найден');
+    return r.json();
+  })
+  .then(render)
+  .catch(err => {
+    document.getElementById('loading').innerHTML =
+      '<div class="error">Не удалось загрузить данные: ' + err.message +
+      '<br>Убедитесь, что daily_update.py уже отработал хотя бы раз.</div>';
+  });
+
+function render(data) {
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('content').style.display = 'block';
+  document.getElementById('period-label').textContent =
+    'Период: ' + data.period_start + ' — ' + data.period_end;
+  document.getElementById('updated-label').textContent =
+    'Обновлено: ' + new Date(data.generated_at).toLocaleString('ru-RU');
+
+  const totalTasks = data.employees.reduce((s, e) => s + e.total, 0);
+  const totalDone = data.employees.reduce((s, e) => s + e.done, 0);
+  const totalOverdue = data.employees.reduce((s, e) => s + e.overdue_now, 0);
+  const totalNoDeadline = data.employees.reduce((s, e) => s + e.no_deadline, 0);
+  const pctDone = totalTasks ? Math.round(100 * totalDone / totalTasks) : 0;
+
+  const kpis = [
+    { label: 'Всего задач', value: totalTasks, cls: '' },
+    { label: 'Завершено', value: totalDone + ' (' + pctDone + '%)', cls: 'success' },
+    { label: 'Просрочено сейчас', value: totalOverdue, cls: totalOverdue > 0 ? 'danger' : '' },
+    { label: 'Без дедлайна', value: totalNoDeadline, cls: '' },
+    { label: 'Сотрудников', value: data.employees.length, cls: '' },
+    { label: 'Отделов', value: data.departments.length, cls: '' },
+  ];
+  document.getElementById('kpi-row').innerHTML = kpis.map(k =>
+    '<div class="kpi"><div class="label">' + k.label + '</div><div class="value ' + k.cls + '">' + k.value + '</div></div>'
+  ).join('');
+
+  new Chart(document.getElementById('trendChart'), {
+    type: 'line',
+    data: {
+      labels: data.daily_trend.map(d => d.date.slice(5)),
+      datasets: [
+        { label: 'Создано', data: data.daily_trend.map(d => d.created), borderColor: '#2a78d6', backgroundColor: 'rgba(42,120,214,0.1)', fill: true, tension: 0.2 },
+        { label: 'Завершено', data: data.daily_trend.map(d => d.completed), borderColor: '#1baf7a', backgroundColor: 'rgba(27,175,122,0.1)', fill: true, tension: 0.2 },
+      ],
+    },
+    options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true } } },
+  });
+
+  const topDepts = [...data.departments].sort((a, b) => b.total - a.total).slice(0, 10);
+  new Chart(document.getElementById('deptChart'), {
+    type: 'bar',
+    data: {
+      labels: topDepts.map(d => d.dept),
+      datasets: [{ label: 'Задач', data: topDepts.map(d => d.total), backgroundColor: '#2a78d6', borderRadius: 4 }],
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: { x: { beginAtZero: true } },
+    },
+  });
+
+  const overdueBody = document.querySelector('#overdue-table tbody');
+  overdueBody.innerHTML = data.top_overdue.map(t =>
+    '<tr><td><a href="' + t.url + '" target="_blank">' + escapeHtml(t.title) + '</a></td>' +
+    '<td>' + escapeHtml(t.employee) + '</td>' +
+    '<td>' + escapeHtml(t.dept) + '</td>' +
+    '<td><span class="pill bad">' + t.days + ' дн.</span></td></tr>'
+  ).join('') || '<tr><td colspan="4" style="text-align:center;color:var(--text-muted);">Просроченных задач нет</td></tr>';
+
+  const empBody = document.querySelector('#emp-table tbody');
+  empBody.innerHTML = data.employees.map(e =>
+    '<tr><td>' + escapeHtml(e.dept) + '</td><td>' + escapeHtml(e.fio) + '</td>' +
+    '<td>' + e.total + '</td><td>' + e.done + '</td>' +
+    '<td><span class="pill ' + (e.pct_done >= 80 ? 'ok' : 'bad') + '">' + e.pct_done + '%</span></td>' +
+    '<td>' + (e.overdue_now > 0 ? '<span class="pill bad">' + e.overdue_now + '</span>' : '0') + '</td></tr>'
+  ).join('');
+}
+
+function escapeHtml(s) {
+  const d = document.createElement('div');
+  d.textContent = s || '';
+  return d.innerHTML;
+}
+</script>
+</body>
+</html>
