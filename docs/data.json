@@ -1,0 +1,1432 @@
+{
+  "generated_at": "2026-09-16T06:28:13",
+  "period_start": "2026-08-17",
+  "period_end": "2026-09-16",
+  "quality": {
+    "total_input_tasks": 13053,
+    "added_tasks": 12629,
+    "excluded_unknown_responsible": 0,
+    "excluded_inactive_responsible": 424,
+    "excluded_by_excluded_list": 0
+  },
+  "employees": [
+    {
+      "dept": "-",
+      "fio": "Кузнецов Руфат Романович",
+      "position": "",
+      "total": 1007,
+      "done": 723,
+      "in_progress": 284,
+      "overdue_now": 269,
+      "closed_overdue": 315,
+      "no_deadline": 0,
+      "pct_done": 71.8,
+      "avg_overdue": 4.6
+    },
+    {
+      "dept": "Алматы \"Ice World\"",
+      "fio": "Жарылқасынова Мерей Жарылқасынқызы",
+      "position": "Менеджер рестопарка Алматы ЗМ",
+      "total": 1,
+      "done": 0,
+      "in_progress": 1,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Алматы \"Ice World\"",
+      "fio": "Наурызбаева Салима Джалгасбаевна",
+      "position": "Управляющий директор парка Ice world Almaty ",
+      "total": 3,
+      "done": 0,
+      "in_progress": 3,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Алматы \"Magic Forest\"",
+      "fio": "Абдрахманова Балнур",
+      "position": "Менеджер ресто-парка",
+      "total": 4,
+      "done": 0,
+      "in_progress": 4,
+      "overdue_now": 4,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Алматы \"Magic Forest\"",
+      "fio": "Анарбек Камиля Айдосқызы",
+      "position": "Директор парка Magic Forest Almaty ",
+      "total": 5,
+      "done": 0,
+      "in_progress": 5,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Алматы \"Magic Forest\"",
+      "fio": "Мурат Аружан",
+      "position": "Банкетный менеджер",
+      "total": 2,
+      "done": 0,
+      "in_progress": 2,
+      "overdue_now": 2,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Алматы \"Magic Forest\"",
+      "fio": "Пулатова Алия",
+      "position": "Менеджер рестопарка",
+      "total": 2,
+      "done": 2,
+      "in_progress": 0,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 100.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Алматы \"Rock World\"",
+      "fio": "Арипханова Нуржайна",
+      "position": "Менеджер рестопарка",
+      "total": 1,
+      "done": 1,
+      "in_progress": 0,
+      "overdue_now": 0,
+      "closed_overdue": 1,
+      "no_deadline": 0,
+      "pct_done": 100.0,
+      "avg_overdue": 6.0
+    },
+    {
+      "dept": "Алматы \"Rock World\"",
+      "fio": "Бердин Есен Калибекович",
+      "position": "Директор парка Алматы Самая Вышка",
+      "total": 5,
+      "done": 0,
+      "in_progress": 5,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Алматы \"Rock World\"",
+      "fio": "Жангабылов Бауржан",
+      "position": "Менеджер Ретропарка Самая Вышка Алматы",
+      "total": 5,
+      "done": 3,
+      "in_progress": 2,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 60.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Алматы \"Rock World\"",
+      "fio": "Санхур Фарид",
+      "position": "Менеджер парка",
+      "total": 4,
+      "done": 2,
+      "in_progress": 2,
+      "overdue_now": 2,
+      "closed_overdue": 1,
+      "no_deadline": 0,
+      "pct_done": 50.0,
+      "avg_overdue": 9.0
+    },
+    {
+      "dept": "Алматы \"Water World\"",
+      "fio": "Имирова Рухсара",
+      "position": "Менеджер рестопарка WW Almaty",
+      "total": 5,
+      "done": 0,
+      "in_progress": 5,
+      "overdue_now": 5,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Алматы \"Water World\"",
+      "fio": "Ғазизұлы Нияз",
+      "position": "Директор рестопарка WW Almaty",
+      "total": 4,
+      "done": 0,
+      "in_progress": 4,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Астана \"Water World\"",
+      "fio": "Кажмульдинов Айбек",
+      "position": "Директора парка \"Astana Water World\"",
+      "total": 3,
+      "done": 0,
+      "in_progress": 3,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Астана \"Water World\"",
+      "fio": "Калиянурова Гульзана",
+      "position": "Менеджер парка",
+      "total": 4,
+      "done": 0,
+      "in_progress": 4,
+      "overdue_now": 4,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Банкетные менеджера",
+      "fio": "Байтан Айнур",
+      "position": "Банкетный менеджер (Астана)",
+      "total": 1,
+      "done": 0,
+      "in_progress": 1,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Караганда \"Rock World\"",
+      "fio": "Абдильдина Радана Миргазиевна",
+      "position": "Менеджер парка",
+      "total": 5,
+      "done": 1,
+      "in_progress": 4,
+      "overdue_now": 3,
+      "closed_overdue": 1,
+      "no_deadline": 0,
+      "pct_done": 20.0,
+      "avg_overdue": 4.0
+    },
+    {
+      "dept": "Караганда \"Rock World\"",
+      "fio": "Евдокимова Анастасия Федоровна",
+      "position": "Директор парка Караганда Самая Вышка",
+      "total": 5,
+      "done": 0,
+      "in_progress": 5,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Караганда \"Rock World\"",
+      "fio": "Конурова Райхан",
+      "position": "Менеджер Караганда",
+      "total": 1,
+      "done": 0,
+      "in_progress": 1,
+      "overdue_now": 1,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Караганда \"Rock World\"",
+      "fio": "Корганбекова Ботакоз",
+      "position": "",
+      "total": 7,
+      "done": 2,
+      "in_progress": 5,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 7,
+      "pct_done": 28.6,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Караганда \"Rock World\"",
+      "fio": "Петрова Ксения",
+      "position": "Менеджер Рестопарка",
+      "total": 1,
+      "done": 0,
+      "in_progress": 1,
+      "overdue_now": 1,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Караганда \"Rock World\"",
+      "fio": "Шамшиева Жанар",
+      "position": "",
+      "total": 1,
+      "done": 1,
+      "in_progress": 0,
+      "overdue_now": 0,
+      "closed_overdue": 1,
+      "no_deadline": 0,
+      "pct_done": 100.0,
+      "avg_overdue": 2.0
+    },
+    {
+      "dept": "Операционный IT",
+      "fio": "Дуйсекулов Султан",
+      "position": "IT Специалист",
+      "total": 19,
+      "done": 7,
+      "in_progress": 9,
+      "overdue_now": 12,
+      "closed_overdue": 2,
+      "no_deadline": 0,
+      "pct_done": 36.8,
+      "avg_overdue": 1.0
+    },
+    {
+      "dept": "Операционный IT",
+      "fio": "Жалелов Асхат",
+      "position": "IT специалист г.Астана, Караганда",
+      "total": 1,
+      "done": 0,
+      "in_progress": 0,
+      "overdue_now": 1,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Операционный IT",
+      "fio": "Жуковский Роман Андреевич",
+      "position": "Руководитель операционного IT отдела",
+      "total": 9,
+      "done": 1,
+      "in_progress": 8,
+      "overdue_now": 4,
+      "closed_overdue": 1,
+      "no_deadline": 0,
+      "pct_done": 11.1,
+      "avg_overdue": 1.0
+    },
+    {
+      "dept": "Операционный IT",
+      "fio": "Коврижных Никита Михайлович",
+      "position": "IT специалист Шымкент",
+      "total": 2,
+      "done": 1,
+      "in_progress": 0,
+      "overdue_now": 1,
+      "closed_overdue": 1,
+      "no_deadline": 0,
+      "pct_done": 50.0,
+      "avg_overdue": 1.0
+    },
+    {
+      "dept": "Операционный отдел",
+      "fio": "Бубнова Наталия Юрьевна",
+      "position": "Операционный директор",
+      "total": 1,
+      "done": 0,
+      "in_progress": 1,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Операционный отдел",
+      "fio": "Марущак Оксана Владимировна",
+      "position": "Старший Менеджер Отдела Продаж",
+      "total": 31,
+      "done": 26,
+      "in_progress": 5,
+      "overdue_now": 5,
+      "closed_overdue": 16,
+      "no_deadline": 0,
+      "pct_done": 83.9,
+      "avg_overdue": 4.0
+    },
+    {
+      "dept": "Отдел Event",
+      "fio": "Кайгородова Кристина Дмитриевна",
+      "position": "Event менеджер",
+      "total": 3,
+      "done": 0,
+      "in_progress": 3,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Отдел Event",
+      "fio": "Смирнов Владимир Сергеевич",
+      "position": "Event-менеджер",
+      "total": 1,
+      "done": 0,
+      "in_progress": 1,
+      "overdue_now": 1,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Отдел закупок",
+      "fio": "Булатов Марат Алмазович",
+      "position": "",
+      "total": 4,
+      "done": 0,
+      "in_progress": 4,
+      "overdue_now": 4,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Отдел закупок",
+      "fio": "Мухаммаджонов Исломджон",
+      "position": "Менеджер Отдела Закупа",
+      "total": 2,
+      "done": 0,
+      "in_progress": 0,
+      "overdue_now": 2,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Отдел закупок",
+      "fio": "Севидова Марина",
+      "position": "Директор отдела закупа",
+      "total": 1,
+      "done": 0,
+      "in_progress": 1,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Отдел закупок",
+      "fio": "Шойынқап Асия Расылханқызы",
+      "position": "менеджер по закупкам",
+      "total": 3,
+      "done": 0,
+      "in_progress": 3,
+      "overdue_now": 3,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Отдел продаж",
+      "fio": "Аббасова Зарина",
+      "position": "Старший Банкетный Менеджер",
+      "total": 32,
+      "done": 29,
+      "in_progress": 3,
+      "overdue_now": 3,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 90.6,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Отдел продаж",
+      "fio": "Аймурза Умай",
+      "position": "",
+      "total": 249,
+      "done": 133,
+      "in_progress": 116,
+      "overdue_now": 79,
+      "closed_overdue": 6,
+      "no_deadline": 0,
+      "pct_done": 53.4,
+      "avg_overdue": 1.7
+    },
+    {
+      "dept": "Отдел продаж",
+      "fio": "Аманжолова Малика Джанибековна",
+      "position": "Менеджер отдела продаж",
+      "total": 1563,
+      "done": 1313,
+      "in_progress": 250,
+      "overdue_now": 229,
+      "closed_overdue": 324,
+      "no_deadline": 0,
+      "pct_done": 84.0,
+      "avg_overdue": 4.8
+    },
+    {
+      "dept": "Отдел продаж",
+      "fio": "Жакпекова Айдана",
+      "position": "",
+      "total": 1,
+      "done": 1,
+      "in_progress": 0,
+      "overdue_now": 0,
+      "closed_overdue": 1,
+      "no_deadline": 0,
+      "pct_done": 100.0,
+      "avg_overdue": 7.0
+    },
+    {
+      "dept": "Отдел продаж",
+      "fio": "Жемилев Адильбек",
+      "position": "Директор Отдела Продаж",
+      "total": 2,
+      "done": 1,
+      "in_progress": 1,
+      "overdue_now": 1,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 50.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Отдел продаж",
+      "fio": "Канат Досанов",
+      "position": "",
+      "total": 1311,
+      "done": 950,
+      "in_progress": 361,
+      "overdue_now": 357,
+      "closed_overdue": 353,
+      "no_deadline": 0,
+      "pct_done": 72.5,
+      "avg_overdue": 5.7
+    },
+    {
+      "dept": "Отдел продаж",
+      "fio": "Рыскул Абзал",
+      "position": "менеджер отдела продаж",
+      "total": 1509,
+      "done": 1158,
+      "in_progress": 351,
+      "overdue_now": 306,
+      "closed_overdue": 462,
+      "no_deadline": 0,
+      "pct_done": 76.7,
+      "avg_overdue": 10.1
+    },
+    {
+      "dept": "Отдел продаж",
+      "fio": "Саин Алишер Асқарұлы",
+      "position": "Менеджер ОП",
+      "total": 1483,
+      "done": 1296,
+      "in_progress": 187,
+      "overdue_now": 155,
+      "closed_overdue": 421,
+      "no_deadline": 0,
+      "pct_done": 87.4,
+      "avg_overdue": 5.7
+    },
+    {
+      "dept": "Отдел продаж",
+      "fio": "Сағындық Назерке",
+      "position": "Менеджер ОП ⭐️",
+      "total": 962,
+      "done": 861,
+      "in_progress": 101,
+      "overdue_now": 86,
+      "closed_overdue": 325,
+      "no_deadline": 0,
+      "pct_done": 89.5,
+      "avg_overdue": 5.0
+    },
+    {
+      "dept": "Отдел продаж",
+      "fio": "Сейсенбай Олжас",
+      "position": "Менеджер отдел продаж",
+      "total": 1683,
+      "done": 1435,
+      "in_progress": 248,
+      "overdue_now": 232,
+      "closed_overdue": 372,
+      "no_deadline": 0,
+      "pct_done": 85.3,
+      "avg_overdue": 5.2
+    },
+    {
+      "dept": "Отдел продаж",
+      "fio": "Турдукулова Аида Жаксылыковна",
+      "position": "Менеджер по продажам",
+      "total": 315,
+      "done": 170,
+      "in_progress": 145,
+      "overdue_now": 145,
+      "closed_overdue": 28,
+      "no_deadline": 0,
+      "pct_done": 54.0,
+      "avg_overdue": 3.0
+    },
+    {
+      "dept": "Отдел продаж",
+      "fio": "Тынымбай Нурбек Аманғалиұлы",
+      "position": "Менеджер ОП",
+      "total": 1654,
+      "done": 1319,
+      "in_progress": 335,
+      "overdue_now": 294,
+      "closed_overdue": 588,
+      "no_deadline": 0,
+      "pct_done": 79.7,
+      "avg_overdue": 5.7
+    },
+    {
+      "dept": "Отдел продаж",
+      "fio": "Шамаев Лаварик",
+      "position": "",
+      "total": 309,
+      "done": 163,
+      "in_progress": 146,
+      "overdue_now": 139,
+      "closed_overdue": 7,
+      "no_deadline": 0,
+      "pct_done": 52.8,
+      "avg_overdue": 0.4
+    },
+    {
+      "dept": "Отдел управления рисками и безопасностью",
+      "fio": "Амиров Аян Алиакбарулы",
+      "position": "Директор Отдела управления рисками и безопасностью ",
+      "total": 12,
+      "done": 0,
+      "in_progress": 12,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 12,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Отдел управления рисками и безопасностью",
+      "fio": "Утегенов Талгат",
+      "position": "Юрист",
+      "total": 17,
+      "done": 1,
+      "in_progress": 16,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 17,
+      "pct_done": 5.9,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Проектный IT",
+      "fio": "Алиев Мавлюд",
+      "position": "Проектный менеджер IT",
+      "total": 4,
+      "done": 4,
+      "in_progress": 0,
+      "overdue_now": 0,
+      "closed_overdue": 1,
+      "no_deadline": 0,
+      "pct_done": 100.0,
+      "avg_overdue": 5.0
+    },
+    {
+      "dept": "Проектный IT",
+      "fio": "Васильев Григорий",
+      "position": "1С программист",
+      "total": 15,
+      "done": 5,
+      "in_progress": 10,
+      "overdue_now": 3,
+      "closed_overdue": 4,
+      "no_deadline": 0,
+      "pct_done": 33.3,
+      "avg_overdue": 3.2
+    },
+    {
+      "dept": "Проектный IT",
+      "fio": "Дарибаев Алжан",
+      "position": "Back-end Developer",
+      "total": 46,
+      "done": 41,
+      "in_progress": 5,
+      "overdue_now": 1,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 89.1,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Проектный IT",
+      "fio": "Дуйсенов Искандер",
+      "position": "",
+      "total": 10,
+      "done": 10,
+      "in_progress": 0,
+      "overdue_now": 0,
+      "closed_overdue": 6,
+      "no_deadline": 0,
+      "pct_done": 100.0,
+      "avg_overdue": 2.3
+    },
+    {
+      "dept": "Проектный IT",
+      "fio": "Куатулы Абуханифа",
+      "position": "Backend Разработчик",
+      "total": 36,
+      "done": 33,
+      "in_progress": 3,
+      "overdue_now": 0,
+      "closed_overdue": 1,
+      "no_deadline": 0,
+      "pct_done": 91.7,
+      "avg_overdue": 0.0
+    },
+    {
+      "dept": "Проектный IT",
+      "fio": "Миков Евгений Александрович",
+      "position": "Директор IT отдела",
+      "total": 3,
+      "done": 0,
+      "in_progress": 3,
+      "overdue_now": 2,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Проектный IT",
+      "fio": "Орынбасар Дидар",
+      "position": "Проектный менеджер IT",
+      "total": 9,
+      "done": 1,
+      "in_progress": 8,
+      "overdue_now": 2,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 11.1,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Проектный IT",
+      "fio": "Сейдахметова Салтанат Ермековна",
+      "position": "Проектный менеджер IT",
+      "total": 25,
+      "done": 14,
+      "in_progress": 10,
+      "overdue_now": 0,
+      "closed_overdue": 6,
+      "no_deadline": 4,
+      "pct_done": 56.0,
+      "avg_overdue": 2.3
+    },
+    {
+      "dept": "Проектный IT",
+      "fio": "Тусупкали Мирас Олжасұлы",
+      "position": "Python Developer",
+      "total": 4,
+      "done": 0,
+      "in_progress": 3,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Проектный IT",
+      "fio": "Халыкова Жанель",
+      "position": "Проектный менеджер IT",
+      "total": 27,
+      "done": 26,
+      "in_progress": 1,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 96.3,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Проектный IT",
+      "fio": "Әби Арын",
+      "position": "Разработчик Python",
+      "total": 6,
+      "done": 4,
+      "in_progress": 2,
+      "overdue_now": 1,
+      "closed_overdue": 4,
+      "no_deadline": 0,
+      "pct_done": 66.7,
+      "avg_overdue": 23.5
+    },
+    {
+      "dept": "Проектный отдел",
+      "fio": "Асенова Дана Бахтияровна",
+      "position": "Логист-закупщик",
+      "total": 4,
+      "done": 0,
+      "in_progress": 0,
+      "overdue_now": 4,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Проектный отдел",
+      "fio": "Мамедова Самира",
+      "position": "",
+      "total": 2,
+      "done": 0,
+      "in_progress": 1,
+      "overdue_now": 2,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Ташкент \"Rock World\"",
+      "fio": "Iniyatova Shahnoza",
+      "position": "",
+      "total": 1,
+      "done": 0,
+      "in_progress": 1,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Ташкент \"Rock World\"",
+      "fio": "Степанова Алина",
+      "position": "",
+      "total": 35,
+      "done": 35,
+      "in_progress": 0,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 100.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Ташкент \"Rock World\"",
+      "fio": "Юлдашев Анвар",
+      "position": "",
+      "total": 55,
+      "done": 52,
+      "in_progress": 3,
+      "overdue_now": 2,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 94.5,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Финансовый отдел",
+      "fio": "Абдибекова Балнур Рахымовна",
+      "position": "Финансовый аналитик",
+      "total": 33,
+      "done": 17,
+      "in_progress": 16,
+      "overdue_now": 0,
+      "closed_overdue": 3,
+      "no_deadline": 0,
+      "pct_done": 51.5,
+      "avg_overdue": 0.0
+    },
+    {
+      "dept": "Финансовый отдел",
+      "fio": "Абдуллаева Маржан Омаровна",
+      "position": "Финансовый директор",
+      "total": 14,
+      "done": 5,
+      "in_progress": 9,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 14,
+      "pct_done": 35.7,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Финансовый отдел",
+      "fio": "Алибекова Меруерт Азаматовна",
+      "position": "Региональный бухгалтер",
+      "total": 4,
+      "done": 0,
+      "in_progress": 4,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 4,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Финансовый отдел",
+      "fio": "Аралбекова Молдир Амировна",
+      "position": "Главный бухгалтер",
+      "total": 4,
+      "done": 0,
+      "in_progress": 4,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Финансовый отдел",
+      "fio": "Мирадил Гулдана Асхаткызы",
+      "position": "Финансовый менеджер",
+      "total": 2,
+      "done": 1,
+      "in_progress": 1,
+      "overdue_now": 0,
+      "closed_overdue": 1,
+      "no_deadline": 0,
+      "pct_done": 50.0,
+      "avg_overdue": 11.0
+    },
+    {
+      "dept": "Финансовый отдел",
+      "fio": "Сулеймен Тогжан Камаргаликызы",
+      "position": "бухгалтер",
+      "total": 20,
+      "done": 0,
+      "in_progress": 20,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "no_deadline": 20,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Шымкент \"Ice World\"",
+      "fio": "Али Жомарт",
+      "position": "Менеджер рестопарка ",
+      "total": 5,
+      "done": 5,
+      "in_progress": 0,
+      "overdue_now": 0,
+      "closed_overdue": 3,
+      "no_deadline": 0,
+      "pct_done": 100.0,
+      "avg_overdue": 0.3
+    },
+    {
+      "dept": "Шымкент \"Ice World\"",
+      "fio": "Асилбаев Мурат Валиханович",
+      "position": "Директор парка",
+      "total": 7,
+      "done": 0,
+      "in_progress": 7,
+      "overdue_now": 2,
+      "closed_overdue": 0,
+      "no_deadline": 0,
+      "pct_done": 0.0,
+      "avg_overdue": 0
+    },
+    {
+      "dept": "Шымкент \"Ice World\"",
+      "fio": "Бекман Қаленәди",
+      "position": "Менеджер Рестопарка",
+      "total": 3,
+      "done": 2,
+      "in_progress": 1,
+      "overdue_now": 1,
+      "closed_overdue": 2,
+      "no_deadline": 0,
+      "pct_done": 66.7,
+      "avg_overdue": 0.0
+    }
+  ],
+  "departments": [
+    {
+      "dept": "Отдел продаж",
+      "employees": 13,
+      "total": 11073,
+      "done": 8829,
+      "in_progress": 2244,
+      "overdue_now": 2026,
+      "closed_overdue": 2887,
+      "pct_done": 79.7
+    },
+    {
+      "dept": "-",
+      "employees": 1,
+      "total": 1007,
+      "done": 723,
+      "in_progress": 284,
+      "overdue_now": 269,
+      "closed_overdue": 315,
+      "pct_done": 71.8
+    },
+    {
+      "dept": "Проектный IT",
+      "employees": 11,
+      "total": 185,
+      "done": 138,
+      "in_progress": 45,
+      "overdue_now": 9,
+      "closed_overdue": 22,
+      "pct_done": 74.6
+    },
+    {
+      "dept": "Ташкент \"Rock World\"",
+      "employees": 3,
+      "total": 91,
+      "done": 87,
+      "in_progress": 4,
+      "overdue_now": 2,
+      "closed_overdue": 0,
+      "pct_done": 95.6
+    },
+    {
+      "dept": "Финансовый отдел",
+      "employees": 6,
+      "total": 77,
+      "done": 23,
+      "in_progress": 54,
+      "overdue_now": 0,
+      "closed_overdue": 4,
+      "pct_done": 29.9
+    },
+    {
+      "dept": "Операционный отдел",
+      "employees": 2,
+      "total": 32,
+      "done": 26,
+      "in_progress": 6,
+      "overdue_now": 5,
+      "closed_overdue": 16,
+      "pct_done": 81.2
+    },
+    {
+      "dept": "Операционный IT",
+      "employees": 4,
+      "total": 31,
+      "done": 9,
+      "in_progress": 17,
+      "overdue_now": 18,
+      "closed_overdue": 4,
+      "pct_done": 29.0
+    },
+    {
+      "dept": "Отдел управления рисками и безопасностью",
+      "employees": 2,
+      "total": 29,
+      "done": 1,
+      "in_progress": 28,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "pct_done": 3.4
+    },
+    {
+      "dept": "Караганда \"Rock World\"",
+      "employees": 6,
+      "total": 20,
+      "done": 4,
+      "in_progress": 16,
+      "overdue_now": 5,
+      "closed_overdue": 2,
+      "pct_done": 20.0
+    },
+    {
+      "dept": "Алматы \"Rock World\"",
+      "employees": 4,
+      "total": 15,
+      "done": 6,
+      "in_progress": 9,
+      "overdue_now": 2,
+      "closed_overdue": 2,
+      "pct_done": 40.0
+    },
+    {
+      "dept": "Шымкент \"Ice World\"",
+      "employees": 3,
+      "total": 15,
+      "done": 7,
+      "in_progress": 8,
+      "overdue_now": 3,
+      "closed_overdue": 5,
+      "pct_done": 46.7
+    },
+    {
+      "dept": "Алматы \"Magic Forest\"",
+      "employees": 4,
+      "total": 13,
+      "done": 2,
+      "in_progress": 11,
+      "overdue_now": 6,
+      "closed_overdue": 0,
+      "pct_done": 15.4
+    },
+    {
+      "dept": "Отдел закупок",
+      "employees": 4,
+      "total": 10,
+      "done": 0,
+      "in_progress": 8,
+      "overdue_now": 9,
+      "closed_overdue": 0,
+      "pct_done": 0.0
+    },
+    {
+      "dept": "Алматы \"Water World\"",
+      "employees": 2,
+      "total": 9,
+      "done": 0,
+      "in_progress": 9,
+      "overdue_now": 5,
+      "closed_overdue": 0,
+      "pct_done": 0.0
+    },
+    {
+      "dept": "Астана \"Water World\"",
+      "employees": 2,
+      "total": 7,
+      "done": 0,
+      "in_progress": 7,
+      "overdue_now": 4,
+      "closed_overdue": 0,
+      "pct_done": 0.0
+    },
+    {
+      "dept": "Проектный отдел",
+      "employees": 2,
+      "total": 6,
+      "done": 0,
+      "in_progress": 1,
+      "overdue_now": 6,
+      "closed_overdue": 0,
+      "pct_done": 0.0
+    },
+    {
+      "dept": "Алматы \"Ice World\"",
+      "employees": 2,
+      "total": 4,
+      "done": 0,
+      "in_progress": 4,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "pct_done": 0.0
+    },
+    {
+      "dept": "Отдел Event",
+      "employees": 2,
+      "total": 4,
+      "done": 0,
+      "in_progress": 4,
+      "overdue_now": 1,
+      "closed_overdue": 0,
+      "pct_done": 0.0
+    },
+    {
+      "dept": "Банкетные менеджера",
+      "employees": 1,
+      "total": 1,
+      "done": 0,
+      "in_progress": 1,
+      "overdue_now": 0,
+      "closed_overdue": 0,
+      "pct_done": 0.0
+    }
+  ],
+  "daily_trend": [
+    {
+      "date": "2026-08-17",
+      "created": 529,
+      "completed": 232
+    },
+    {
+      "date": "2026-08-18",
+      "created": 290,
+      "completed": 167
+    },
+    {
+      "date": "2026-08-19",
+      "created": 351,
+      "completed": 233
+    },
+    {
+      "date": "2026-08-20",
+      "created": 284,
+      "completed": 168
+    },
+    {
+      "date": "2026-08-21",
+      "created": 260,
+      "completed": 177
+    },
+    {
+      "date": "2026-08-22",
+      "created": 202,
+      "completed": 270
+    },
+    {
+      "date": "2026-08-23",
+      "created": 219,
+      "completed": 163
+    },
+    {
+      "date": "2026-08-24",
+      "created": 505,
+      "completed": 261
+    },
+    {
+      "date": "2026-08-25",
+      "created": 447,
+      "completed": 374
+    },
+    {
+      "date": "2026-08-26",
+      "created": 657,
+      "completed": 433
+    },
+    {
+      "date": "2026-08-27",
+      "created": 394,
+      "completed": 209
+    },
+    {
+      "date": "2026-08-28",
+      "created": 299,
+      "completed": 291
+    },
+    {
+      "date": "2026-08-29",
+      "created": 288,
+      "completed": 213
+    },
+    {
+      "date": "2026-08-30",
+      "created": 288,
+      "completed": 223
+    },
+    {
+      "date": "2026-08-31",
+      "created": 752,
+      "completed": 572
+    },
+    {
+      "date": "2026-09-01",
+      "created": 488,
+      "completed": 256
+    },
+    {
+      "date": "2026-09-02",
+      "created": 476,
+      "completed": 553
+    },
+    {
+      "date": "2026-09-03",
+      "created": 470,
+      "completed": 457
+    },
+    {
+      "date": "2026-09-04",
+      "created": 434,
+      "completed": 225
+    },
+    {
+      "date": "2026-09-05",
+      "created": 350,
+      "completed": 418
+    },
+    {
+      "date": "2026-09-06",
+      "created": 322,
+      "completed": 484
+    },
+    {
+      "date": "2026-09-07",
+      "created": 586,
+      "completed": 395
+    },
+    {
+      "date": "2026-09-08",
+      "created": 538,
+      "completed": 467
+    },
+    {
+      "date": "2026-09-09",
+      "created": 431,
+      "completed": 284
+    },
+    {
+      "date": "2026-09-10",
+      "created": 424,
+      "completed": 285
+    },
+    {
+      "date": "2026-09-11",
+      "created": 324,
+      "completed": 353
+    },
+    {
+      "date": "2026-09-12",
+      "created": 287,
+      "completed": 292
+    },
+    {
+      "date": "2026-09-13",
+      "created": 329,
+      "completed": 292
+    },
+    {
+      "date": "2026-09-14",
+      "created": 755,
+      "completed": 454
+    },
+    {
+      "date": "2026-09-15",
+      "created": 534,
+      "completed": 579
+    },
+    {
+      "date": "2026-09-16",
+      "created": 116,
+      "completed": 75
+    }
+  ],
+  "top_overdue": [
+    {
+      "title": "Добавление функции генерации визуализации банкета в AI-боте «Бренд Шеф»",
+      "employee": "Әби Арын",
+      "dept": "Проектный IT",
+      "days": 46,
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/418462/tasks/task/view/1220134/"
+    },
+    {
+      "title": "Связаться с клиентом",
+      "employee": "Тынымбай Нурбек Аманғалиұлы",
+      "dept": "Отдел продаж",
+      "days": 29,
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/126244/tasks/task/view/1181268/"
+    },
+    {
+      "title": "Связаться с клиентом",
+      "employee": "Тынымбай Нурбек Аманғалиұлы",
+      "dept": "Отдел продаж",
+      "days": 29,
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/126244/tasks/task/view/1181292/"
+    },
+    {
+      "title": "Связаться с клиентом",
+      "employee": "Тынымбай Нурбек Аманғалиұлы",
+      "dept": "Отдел продаж",
+      "days": 29,
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/126244/tasks/task/view/1181320/"
+    },
+    {
+      "title": "Связаться с клиентом",
+      "employee": "Тынымбай Нурбек Аманғалиұлы",
+      "dept": "Отдел продаж",
+      "days": 29,
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/126244/tasks/task/view/1181344/"
+    },
+    {
+      "title": "Связаться с клиентом",
+      "employee": "Тынымбай Нурбек Аманғалиұлы",
+      "dept": "Отдел продаж",
+      "days": 29,
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/126244/tasks/task/view/1181368/"
+    },
+    {
+      "title": "Отработка сделки",
+      "employee": "Рыскул Абзал",
+      "dept": "Отдел продаж",
+      "days": 28,
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/387296/tasks/task/view/1181314/"
+    },
+    {
+      "title": "Отработка сделки",
+      "employee": "Сағындық Назерке",
+      "dept": "Отдел продаж",
+      "days": 28,
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/145662/tasks/task/view/1181316/"
+    },
+    {
+      "title": "Отработка сделки",
+      "employee": "Рыскул Абзал",
+      "dept": "Отдел продаж",
+      "days": 28,
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/387296/tasks/task/view/1181336/"
+    },
+    {
+      "title": "Связаться с клиентом",
+      "employee": "Тынымбай Нурбек Аманғалиұлы",
+      "dept": "Отдел продаж",
+      "days": 28,
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/126244/tasks/task/view/1183336/"
+    },
+    {
+      "title": "Связаться с клиентом",
+      "employee": "Тынымбай Нурбек Аманғалиұлы",
+      "dept": "Отдел продаж",
+      "days": 28,
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/126244/tasks/task/view/1183432/"
+    },
+    {
+      "title": "Связаться с клиентом",
+      "employee": "Кузнецов Руфат Романович",
+      "dept": "-",
+      "days": 28,
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/418978/tasks/task/view/1183540/"
+    },
+    {
+      "title": "Связаться с клиентом",
+      "employee": "Кузнецов Руфат Романович",
+      "dept": "-",
+      "days": 28,
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/418978/tasks/task/view/1183554/"
+    },
+    {
+      "title": "Связаться с клиентом",
+      "employee": "Кузнецов Руфат Романович",
+      "dept": "-",
+      "days": 28,
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/418978/tasks/task/view/1183568/"
+    },
+    {
+      "title": "Связаться с клиентом",
+      "employee": "Кузнецов Руфат Романович",
+      "dept": "-",
+      "days": 28,
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/418978/tasks/task/view/1183582/"
+    }
+  ]
+}
