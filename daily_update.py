@@ -44,9 +44,19 @@ if not (TASKS_WEBHOOK and USERS_WEBHOOK and DEPARTMENTS_WEBHOOK):
     )
 
 _excluded_env = os.environ.get("EXCLUDED_USER_IDS", "")
-EXCLUDED_USER_IDS = {x.strip() for x in _excluded_env.split(",") if x.strip()} or {
-    "547722", "652618", "24724", "11428", "178192",
+BASE_EXCLUDED_IDS = {x.strip() for x in _excluded_env.split(",") if x.strip()} or {
+    "547722", "652618", "24724", "11428", "178192", "113710", "104332",
 }
+
+# ID, которые исключаются ТОЛЬКО как исполнитель (RESPONSIBLE_ID), но остаются
+# видимыми как постановщик — например Тультаев Алмаз.
+_excluded_resp_only_env = os.environ.get("EXCLUDED_RESPONSIBLE_ONLY_IDS", "")
+EXCLUDED_RESPONSIBLE_ONLY_IDS = {
+    x.strip() for x in _excluded_resp_only_env.split(",") if x.strip()
+} or {"54"}
+
+EXCLUDED_RESPONSIBLE_IDS = BASE_EXCLUDED_IDS | EXCLUDED_RESPONSIBLE_ONLY_IDS
+EXCLUDED_CREATOR_IDS = BASE_EXCLUDED_IDS
 
 # Задачи, у которых в названии/описании встречается любая из этих фраз
 # (без учёта регистра), полностью исключаются из дашборда — это
@@ -56,6 +66,23 @@ EXCLUDED_TITLE_SUBSTRINGS = [
     x.strip().lower() for x in _excluded_titles_env.split(",") if x.strip()
 ] or ["связаться с клиентом"]
 
+# Отделы, которые полностью исключаются из дашборда (например, отдел разработки
+# и парки/локации — их задачи не относятся к операционной аналитике по сотрудникам).
+_excluded_depts_env = os.environ.get("EXCLUDED_DEPARTMENTS", "")
+EXCLUDED_DEPARTMENTS = {
+    x.strip() for x in _excluded_depts_env.split(",") if x.strip()
+} or {
+    "Разработчики",
+    'Алматы "Ice World"',
+    'Алматы "Magic Forest"',
+    'Алматы "Rock World"',
+    'Алматы "Water World"',
+    'Караганда "Rock World"',
+    'Ташкент "Rock World"',
+    'Тараз "Ice World"',
+    'Шымкент "Ice World"',
+}
+
 PERIOD_START_STR = os.environ.get("PERIOD_START", "2026-07-01")
 OUTPUT_JSON = os.environ.get("OUTPUT_JSON", "docs/data.json")
 ARCHIVE_PATH = os.environ.get("ARCHIVE_PATH", "data/tasks_archive.json")
@@ -63,7 +90,7 @@ ARCHIVE_PATH = os.environ.get("ARCHIVE_PATH", "data/tasks_archive.json")
 # на случай пропущенного дня или изменений задним числом.
 LOOKBACK_DAYS = int(os.environ.get("LOOKBACK_DAYS", "3"))
 
-REQUEST_DELAY = 0.25
+REQUEST_DELAY = 5.0
 _last_request_time = [0.0]
 SESSION = requests.Session()
 
@@ -99,7 +126,7 @@ def is_employee_type(user):
     return True if t is None else t == "employee"
 
 
-def rest_call(webhook, method, params=None, max_retries=10):
+def rest_call(webhook, method, params=None, max_retries=15):
     url = webhook.rstrip("/") + "/" + method + ".json"
     for attempt in range(max_retries):
         elapsed = time.monotonic() - _last_request_time[0]
@@ -109,12 +136,12 @@ def rest_call(webhook, method, params=None, max_retries=10):
         try:
             resp = SESSION.post(url, json=params or {}, timeout=90)
         except requests.exceptions.RequestException as e:
-            wait = min(5 * (attempt + 1), 60)
+            wait = min(5 * (attempt + 1), 90)
             print(f"  [сеть] {type(e).__name__}, жду {wait} сек ({method})...")
             time.sleep(wait)
             continue
         if resp.status_code == 429 or resp.status_code >= 500:
-            wait = min(5 * (attempt + 1), 60)
+            wait = min(5 * (attempt + 1), 90)
             print(f"  [{resp.status_code}] жду {wait} сек ({method})...")
             time.sleep(wait)
             continue
@@ -122,7 +149,7 @@ def rest_call(webhook, method, params=None, max_retries=10):
         data = resp.json()
         if "error" in data:
             if data.get("error") == "QUERY_LIMIT_EXCEEDED":
-                wait = min(5 * (attempt + 1), 60)
+                wait = min(5 * (attempt + 1), 90)
                 print(f"  [лимит] жду {wait} сек ({method})...")
                 time.sleep(wait)
                 continue
@@ -207,8 +234,8 @@ print(f"  получено: {len(raw_departments)}")
 if is_first_run:
     print(f"Первый запуск: полная выгрузка задач с {period_start.date()} по {period_end.date()}...")
     task_filter = {
-        ">=CREATED_DATE": period_start.strftime("%Y-%m-%dT00:00:00"),
-        "<=CREATED_DATE": period_end.strftime("%Y-%m-%dT23:59:59"),
+        ">=DEADLINE": period_start.strftime("%Y-%m-%dT00:00:00"),
+        "<=DEADLINE": period_end.strftime("%Y-%m-%dT23:59:59"),
     }
 else:
     fetch_since = now - dt.timedelta(days=LOOKBACK_DAYS)
@@ -217,15 +244,42 @@ else:
         ">=CHANGED_DATE": fetch_since.strftime("%Y-%m-%dT00:00:00"),
     }
 
-if EXCLUDED_USER_IDS:
-    task_filter["!RESPONSIBLE_ID"] = sorted(EXCLUDED_USER_IDS)
+if EXCLUDED_RESPONSIBLE_IDS:
+    task_filter["!RESPONSIBLE_ID"] = sorted(EXCLUDED_RESPONSIBLE_IDS)
 
 fetched_tasks = fetch_all_list(
     TASKS_WEBHOOK, "tasks.task.list",
     base_params={"filter": task_filter, "order": {"ID": "asc"}},
 )
 fetched_tasks = [normalize_task(t) for t in fetched_tasks]
-print(f"  получено за этот запуск: {len(fetched_tasks)}")
+print(f"  получено за этот запуск (по крайнему сроку): {len(fetched_tasks)}")
+
+if is_first_run:
+    # Задачи без дедлайна не попадают в фильтр по DEADLINE вообще — отдельно
+    # добираем их по дате СОЗДАНИЯ и оставляем только те, где дедлайна и правда нет.
+    print("Дополнительно ищу задачи без дедлайна (по дате создания)...")
+    no_deadline_filter = {
+        ">=CREATED_DATE": period_start.strftime("%Y-%m-%dT00:00:00"),
+        "<=CREATED_DATE": period_end.strftime("%Y-%m-%dT23:59:59"),
+    }
+    if EXCLUDED_RESPONSIBLE_IDS:
+        no_deadline_filter["!RESPONSIBLE_ID"] = sorted(EXCLUDED_RESPONSIBLE_IDS)
+    by_created = fetch_all_list(
+        TASKS_WEBHOOK, "tasks.task.list",
+        base_params={"filter": no_deadline_filter, "order": {"ID": "asc"}},
+    )
+    by_created = [normalize_task(t) for t in by_created]
+    already_ids = {str(t.get("ID")) for t in fetched_tasks}
+    added_no_deadline = 0
+    for t in by_created:
+        if str(t.get("ID")) in already_ids:
+            continue
+        if not t.get("DEADLINE"):
+            fetched_tasks.append(t)
+            added_no_deadline += 1
+    print(f"  добавлено задач без дедлайна: {added_no_deadline}")
+
+print(f"  всего получено за этот запуск: {len(fetched_tasks)}")
 
 # Сливаем свежескачанное в архив (перезаписываем по ID — новые данные всегда точнее).
 for t in fetched_tasks:
@@ -260,6 +314,17 @@ def resolve_department(user):
     return departments_by_id.get(str(depts[0]), "")
 
 
+def user_in_excluded_department(user):
+    """True if the user belongs to ANY excluded department (not just their
+    primary one) — so employees of excluded departments are fully skipped."""
+    depts = user.get("UF_DEPARTMENT") or []
+    for d in depts:
+        name = departments_by_id.get(str(d), "")
+        if name in EXCLUDED_DEPARTMENTS:
+            return True
+    return False
+
+
 # ============================== FILTER + AGGREGATE ==============================
 
 quality = {
@@ -269,6 +334,7 @@ quality = {
     "excluded_inactive_responsible": 0,
     "excluded_by_excluded_list": 0,
     "excluded_by_title": 0,
+    "excluded_by_department": 0,
 }
 
 emp_stats = defaultdict(lambda: {
@@ -298,7 +364,12 @@ for t in raw_tasks:
     if not (is_active(resp_user) and is_employee_type(resp_user)):
         quality["excluded_inactive_responsible"] += 1
         continue
-    if resp_id in EXCLUDED_USER_IDS:
+    if resp_id in EXCLUDED_RESPONSIBLE_IDS:
+        quality["excluded_by_excluded_list"] += 1
+        continue
+
+    creator_id = str(t.get("CREATED_BY") or "")
+    if creator_id in EXCLUDED_CREATOR_IDS:
         quality["excluded_by_excluded_list"] += 1
         continue
 
@@ -307,8 +378,13 @@ for t in raw_tasks:
         quality["excluded_by_title"] += 1
         continue
 
-    valid_tasks += 1
+    if user_in_excluded_department(resp_user):
+        quality["excluded_by_department"] += 1
+        continue
+
     dept_name = resolve_department(resp_user)
+
+    valid_tasks += 1
     employee_fio = fio(resp_user)
     position = resp_user.get("WORK_POSITION", "") or ""
 
@@ -395,7 +471,7 @@ for t in raw_tasks:
 quality["added_tasks"] = valid_tasks
 print(f"Итог: добавлено {valid_tasks}, исключено (неизвестный ID) {quality['excluded_unknown_responsible']}, "
       f"неактивных {quality['excluded_inactive_responsible']}, по списку {quality['excluded_by_excluded_list']}, "
-      f"по названию {quality['excluded_by_title']}")
+      f"по названию {quality['excluded_by_title']}, по отделу {quality['excluded_by_department']}")
 
 # ============================== BUILD JSON ==============================
 
