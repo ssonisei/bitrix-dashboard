@@ -84,7 +84,7 @@ EXCLUDED_CREATOR_IDS = BASE_EXCLUDED_IDS
 _excluded_titles_env = os.environ.get("EXCLUDED_TITLE_SUBSTRINGS", "")
 EXCLUDED_TITLE_SUBSTRINGS = [
     x.strip().lower() for x in _excluded_titles_env.split(",") if x.strip()
-] or ["связаться с клиентом"]
+] or ["связаться с клиентом", "обратная связь"]
 
 # Отделы, которые полностью исключаются из дашборда (например, отдел разработки
 # и парки/локации — их задачи не относятся к операционной аналитике по сотрудникам).
@@ -97,6 +97,7 @@ EXCLUDED_DEPARTMENTS = {
     'Алматы "Magic Forest"',
     'Алматы "Rock World"',
     'Алматы "Water World"',
+    'Астана "Water World"',
     'Караганда "Rock World"',
     'Ташкент "Rock World"',
     'Тараз "Ice World"',
@@ -274,10 +275,10 @@ log("ШАГ 3/5: задачи по крайнему сроку")
 log("=" * 60)
 
 if is_first_run:
-    log(f"Первый запуск: полная выгрузка задач с {period_start.date()} по {period_end.date()}...")
+    log(f"Первый запуск: полная выгрузка задач с крайним сроком от {period_start.date()} "
+        f"(без верхней границы — будущие дедлайны тоже включаются)...")
     task_filter = {
         ">=DEADLINE": period_start.strftime("%Y-%m-%dT00:00:00"),
-        "<=DEADLINE": period_end.strftime("%Y-%m-%dT23:59:59"),
     }
 else:
     fetch_since = now - dt.timedelta(days=LOOKBACK_DAYS)
@@ -425,8 +426,8 @@ for t in raw_tasks:
         quality["excluded_by_excluded_list"] += 1
         continue
 
-    text_lower = ((t.get("TITLE") or "") + " " + (t.get("DESCRIPTION") or "")).lower()
-    if any(sub in text_lower for sub in EXCLUDED_TITLE_SUBSTRINGS):
+    title_lower = (t.get("TITLE") or "").lower()
+    if any(sub in title_lower for sub in EXCLUDED_TITLE_SUBSTRINGS):
         quality["excluded_by_title"] += 1
         continue
 
