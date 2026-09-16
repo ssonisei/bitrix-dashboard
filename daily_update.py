@@ -257,8 +257,8 @@ for t in raw_tasks:
         quality["excluded_by_excluded_list"] += 1
         continue
 
-    title_lower = (t.get("TITLE") or "").lower()
-    if any(sub in title_lower for sub in EXCLUDED_TITLE_SUBSTRINGS):
+    text_lower = ((t.get("TITLE") or "") + " " + (t.get("DESCRIPTION") or "")).lower()
+    if any(sub in text_lower for sub in EXCLUDED_TITLE_SUBSTRINGS):
         quality["excluded_by_title"] += 1
         continue
 
