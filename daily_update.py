@@ -25,11 +25,31 @@ import os
 import re
 import html
 import json
+import sys
 import time
+import traceback
 import datetime as dt
 from collections import defaultdict
 
 import requests
+
+START_TIME = time.monotonic()
+
+
+def log(msg):
+    """Печатает сообщение с меткой времени от старта скрипта — по этим
+    отметкам легко понять, на каком шаге и сколько времени всё занимает."""
+    elapsed = time.monotonic() - START_TIME
+    print(f"[{elapsed:7.1f}s] {msg}", flush=True)
+
+
+def _log_uncaught_exception(exc_type, exc_value, exc_tb):
+    elapsed = time.monotonic() - START_TIME
+    print(f"[{elapsed:7.1f}s] !!! ОСТАНОВЛЕНО ОШИБКОЙ: {exc_type.__name__}: {exc_value}", flush=True)
+    traceback.print_exception(exc_type, exc_value, exc_tb)
+
+
+sys.excepthook = _log_uncaught_exception
 
 # ============================== CONFIG ==============================
 
@@ -83,14 +103,14 @@ EXCLUDED_DEPARTMENTS = {
     'Шымкент "Ice World"',
 }
 
-PERIOD_START_STR = os.environ.get("PERIOD_START", "2026-07-01")
+PERIOD_START_STR = os.environ.get("PERIOD_START", "2026-08-01")
 OUTPUT_JSON = os.environ.get("OUTPUT_JSON", "docs/data.json")
 ARCHIVE_PATH = os.environ.get("ARCHIVE_PATH", "data/tasks_archive.json")
 # Сколько дней "назад" перезабирать при инкрементальном обновлении — с запасом,
 # на случай пропущенного дня или изменений задним числом.
 LOOKBACK_DAYS = int(os.environ.get("LOOKBACK_DAYS", "3"))
 
-REQUEST_DELAY = 5.0
+REQUEST_DELAY = 0.3
 _last_request_time = [0.0]
 SESSION = requests.Session()
 
@@ -137,12 +157,12 @@ def rest_call(webhook, method, params=None, max_retries=15):
             resp = SESSION.post(url, json=params or {}, timeout=90)
         except requests.exceptions.RequestException as e:
             wait = min(5 * (attempt + 1), 90)
-            print(f"  [сеть] {type(e).__name__}, жду {wait} сек ({method})...")
+            log(f"  [сеть] {type(e).__name__}, жду {wait} сек ({method}), попытка {attempt + 1}/{max_retries}...")
             time.sleep(wait)
             continue
         if resp.status_code == 429 or resp.status_code >= 500:
             wait = min(5 * (attempt + 1), 90)
-            print(f"  [{resp.status_code}] жду {wait} сек ({method})...")
+            log(f"  [{resp.status_code}] жду {wait} сек ({method}), попытка {attempt + 1}/{max_retries}...")
             time.sleep(wait)
             continue
         resp.raise_for_status()
@@ -150,7 +170,7 @@ def rest_call(webhook, method, params=None, max_retries=15):
         if "error" in data:
             if data.get("error") == "QUERY_LIMIT_EXCEEDED":
                 wait = min(5 * (attempt + 1), 90)
-                print(f"  [лимит] жду {wait} сек ({method})...")
+                log(f"  [лимит] жду {wait} сек ({method}), попытка {attempt + 1}/{max_retries}...")
                 time.sleep(wait)
                 continue
             raise RuntimeError(f"Bitrix error on {method}: {data}")
@@ -158,10 +178,11 @@ def rest_call(webhook, method, params=None, max_retries=15):
     raise RuntimeError(f"Bitrix REST call to {method} failed after {max_retries} retries.")
 
 
-def fetch_all_list(webhook, method, base_params=None):
+def fetch_all_list(webhook, method, base_params=None, label=""):
     base_params = dict(base_params or {})
     all_items = []
     start = 0
+    page = 0
     while True:
         params = dict(base_params)
         params["start"] = start
@@ -170,6 +191,13 @@ def fetch_all_list(webhook, method, base_params=None):
         if isinstance(result, dict):
             result = result.get("tasks", result.get("task", []))
         all_items.extend(result)
+        page += 1
+        total = data.get("total")
+        tag = f" [{label}]" if label else ""
+        if total:
+            log(f"  ...страница {page}{tag}: {len(all_items)}/{total}")
+        else:
+            log(f"  ...страница {page}{tag}: {len(all_items)}")
         nxt = data.get("next")
         if nxt is None:
             break
@@ -199,9 +227,14 @@ def normalize_task(t):
 
 # ============================== FETCH ==============================
 
+log("=" * 60)
+log("ШАГ 1/5: инициализация и проверка архива")
+log("=" * 60)
+
 now = dt.datetime.now()
 period_end = now
 period_start = dt.datetime.strptime(PERIOD_START_STR, "%Y-%m-%d")
+log(f"Период: {period_start.date()} — {period_end.date()}")
 
 # Архив уже скачанных (нормализованных, ДО фильтрации по сотрудникам/названию)
 # задач — ключ: ID задачи. Фильтры (уволенные, исключённые названия и т.д.)
@@ -212,34 +245,43 @@ if os.path.exists(ARCHIVE_PATH):
     try:
         with open(ARCHIVE_PATH, "r", encoding="utf-8") as f:
             archive = json.load(f)
-        print(f"Архив найден: {len(archive)} задач уже сохранено ранее.")
+        log(f"Архив найден: {len(archive)} задач уже сохранено ранее.")
     except Exception as e:
-        print(f"Не удалось прочитать архив ({e}), начинаю с нуля.")
+        log(f"Не удалось прочитать архив ({e}), начинаю с нуля.")
         archive = {}
 
 is_first_run = not archive
+log(f"Режим: {'ПЕРВЫЙ ЗАПУСК (полная выгрузка)' if is_first_run else 'инкрементальное обновление'}")
 
-print("Загружаю сотрудников...")
-raw_users = fetch_all_list(USERS_WEBHOOK, "user.get")
-print(f"  получено: {len(raw_users)}")
+log("=" * 60)
+log("ШАГ 2/5: сотрудники и отделы")
+log("=" * 60)
 
-print("Загружаю отделы...")
+log("Загружаю сотрудников (user.get)...")
+raw_users = fetch_all_list(USERS_WEBHOOK, "user.get", label="сотрудники")
+log(f"Сотрудников получено: {len(raw_users)}")
+
+log("Загружаю отделы (department.get)...")
 try:
-    raw_departments = fetch_all_list(DEPARTMENTS_WEBHOOK, "department.get")
+    raw_departments = fetch_all_list(DEPARTMENTS_WEBHOOK, "department.get", label="отделы")
 except Exception as e:
-    print(f"  department.get недоступен ({e}); отделы будут пустыми.")
+    log(f"department.get недоступен ({e}); отделы будут пустыми.")
     raw_departments = []
-print(f"  получено: {len(raw_departments)}")
+log(f"Отделов получено: {len(raw_departments)}")
+
+log("=" * 60)
+log("ШАГ 3/5: задачи по крайнему сроку")
+log("=" * 60)
 
 if is_first_run:
-    print(f"Первый запуск: полная выгрузка задач с {period_start.date()} по {period_end.date()}...")
+    log(f"Первый запуск: полная выгрузка задач с {period_start.date()} по {period_end.date()}...")
     task_filter = {
         ">=DEADLINE": period_start.strftime("%Y-%m-%dT00:00:00"),
         "<=DEADLINE": period_end.strftime("%Y-%m-%dT23:59:59"),
     }
 else:
     fetch_since = now - dt.timedelta(days=LOOKBACK_DAYS)
-    print(f"Инкрементальное обновление: задачи, изменённые с {fetch_since.date()}...")
+    log(f"Инкрементальное обновление: задачи, изменённые с {fetch_since.date()}...")
     task_filter = {
         ">=CHANGED_DATE": fetch_since.strftime("%Y-%m-%dT00:00:00"),
     }
@@ -250,23 +292,29 @@ if EXCLUDED_RESPONSIBLE_IDS:
 fetched_tasks = fetch_all_list(
     TASKS_WEBHOOK, "tasks.task.list",
     base_params={"filter": task_filter, "order": {"ID": "asc"}},
+    label="по дедлайну",
 )
 fetched_tasks = [normalize_task(t) for t in fetched_tasks]
-print(f"  получено за этот запуск (по крайнему сроку): {len(fetched_tasks)}")
+log(f"Получено за этот запуск (по крайнему сроку): {len(fetched_tasks)}")
 
 if is_first_run:
+    log("=" * 60)
+    log("ШАГ 4/5: доп. поиск задач без дедлайна")
+    log("=" * 60)
     # Задачи без дедлайна не попадают в фильтр по DEADLINE вообще — отдельно
     # добираем их по дате СОЗДАНИЯ и оставляем только те, где дедлайна и правда нет.
-    print("Дополнительно ищу задачи без дедлайна (по дате создания)...")
+    log("Дополнительно ищу задачи без дедлайна (по дате создания)...")
     no_deadline_filter = {
         ">=CREATED_DATE": period_start.strftime("%Y-%m-%dT00:00:00"),
         "<=CREATED_DATE": period_end.strftime("%Y-%m-%dT23:59:59"),
+        "DEADLINE": "",  # пробуем отфильтровать пустой дедлайн прямо на сервере
     }
     if EXCLUDED_RESPONSIBLE_IDS:
         no_deadline_filter["!RESPONSIBLE_ID"] = sorted(EXCLUDED_RESPONSIBLE_IDS)
     by_created = fetch_all_list(
         TASKS_WEBHOOK, "tasks.task.list",
         base_params={"filter": no_deadline_filter, "order": {"ID": "asc"}},
+        label="без дедлайна",
     )
     by_created = [normalize_task(t) for t in by_created]
     already_ids = {str(t.get("ID")) for t in fetched_tasks}
@@ -277,9 +325,13 @@ if is_first_run:
         if not t.get("DEADLINE"):
             fetched_tasks.append(t)
             added_no_deadline += 1
-    print(f"  добавлено задач без дедлайна: {added_no_deadline}")
+    log(f"Добавлено задач без дедлайна: {added_no_deadline}")
 
-print(f"  всего получено за этот запуск: {len(fetched_tasks)}")
+log(f"Всего получено за этот запуск: {len(fetched_tasks)}")
+
+log("=" * 60)
+log("ШАГ 5/5: сохранение архива и пересчёт статистики")
+log("=" * 60)
 
 # Сливаем свежескачанное в архив (перезаписываем по ID — новые данные всегда точнее).
 for t in fetched_tasks:
@@ -290,10 +342,10 @@ for t in fetched_tasks:
 with open(ARCHIVE_PATH, "w", encoding="utf-8") as f:
     os.makedirs(os.path.dirname(ARCHIVE_PATH) or ".", exist_ok=True)
     json.dump(archive, f, ensure_ascii=False)
-print(f"Архив обновлён: всего {len(archive)} задач.")
 
 raw_tasks = list(archive.values())
-print(f"Всего задач для пересчёта статистики: {len(raw_tasks)}")
+log(f"Архив обновлён: всего {len(archive)} задач.")
+log(f"Всего задач для пересчёта статистики: {len(raw_tasks)}")
 
 # ============================== INDEX ==============================
 
@@ -469,9 +521,12 @@ for t in raw_tasks:
     })
 
 quality["added_tasks"] = valid_tasks
-print(f"Итог: добавлено {valid_tasks}, исключено (неизвестный ID) {quality['excluded_unknown_responsible']}, "
-      f"неактивных {quality['excluded_inactive_responsible']}, по списку {quality['excluded_by_excluded_list']}, "
-      f"по названию {quality['excluded_by_title']}, по отделу {quality['excluded_by_department']}")
+log("=" * 60)
+log("ИТОГ ФИЛЬТРАЦИИ")
+log("=" * 60)
+log(f"Добавлено {valid_tasks}, исключено (неизвестный ID) {quality['excluded_unknown_responsible']}, "
+    f"неактивных {quality['excluded_inactive_responsible']}, по списку {quality['excluded_by_excluded_list']}, "
+    f"по названию {quality['excluded_by_title']}, по отделу {quality['excluded_by_department']}")
 
 # ============================== BUILD JSON ==============================
 
@@ -523,4 +578,5 @@ os.makedirs(os.path.dirname(OUTPUT_JSON) or ".", exist_ok=True)
 with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
     json.dump(output, f, ensure_ascii=False, indent=2)
 
-print(f"Готово: {OUTPUT_JSON}")
+log(f"Готово: {OUTPUT_JSON}")
+log(f"Общее время выполнения: {time.monotonic() - START_TIME:.1f} сек.")
