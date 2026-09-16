@@ -3,9 +3,13 @@
 """
 Ежедневное обновление данных для дашборда Bitrix24.
 
-Забирает задачи за последние ROLLING_DAYS дней, фильтрует по активным
-сотрудникам (как в bitrix_report.py), считает агрегированную статистику
-и сохраняет её в docs/data.json — эту точку дашборд (docs/index.html)
+Первый запуск: полностью выгружает задачи с PERIOD_START по сегодня.
+Все следующие запуски: забирают только задачи, изменённые за последние
+LOOKBACK_DAYS дней, и сливают их в сохранённый архив (data/tasks_archive.json).
+Статистика на каждом запуске пересчитывается заново по ВСЕМУ архиву — это
+дёшево (без обращений к Bitrix) и учитывает изменения статусов старых задач.
+
+Итог сохраняется в docs/data.json — эту точку дашборд (docs/index.html)
 подгружает через fetch().
 
 Работает и локально, и в GitHub Actions. Вебхуки берутся из переменных
@@ -54,6 +58,10 @@ EXCLUDED_TITLE_SUBSTRINGS = [
 
 PERIOD_START_STR = os.environ.get("PERIOD_START", "2026-07-01")
 OUTPUT_JSON = os.environ.get("OUTPUT_JSON", "docs/data.json")
+ARCHIVE_PATH = os.environ.get("ARCHIVE_PATH", "data/tasks_archive.json")
+# Сколько дней "назад" перезабирать при инкрементальном обновлении — с запасом,
+# на случай пропущенного дня или изменений задним числом.
+LOOKBACK_DAYS = int(os.environ.get("LOOKBACK_DAYS", "3"))
 
 REQUEST_DELAY = 0.25
 _last_request_time = [0.0]
@@ -168,7 +176,21 @@ now = dt.datetime.now()
 period_end = now
 period_start = dt.datetime.strptime(PERIOD_START_STR, "%Y-%m-%d")
 
-print(f"Период: {period_start.date()} — {period_end.date()} (с фиксированной даты начала)")
+# Архив уже скачанных (нормализованных, ДО фильтрации по сотрудникам/названию)
+# задач — ключ: ID задачи. Фильтры (уволенные, исключённые названия и т.д.)
+# применяются заново на КАЖДОМ запуске поверх всего архива, чтобы правильно
+# учитывать смены статуса/дедлайна и изменения в списке сотрудников.
+archive = {}
+if os.path.exists(ARCHIVE_PATH):
+    try:
+        with open(ARCHIVE_PATH, "r", encoding="utf-8") as f:
+            archive = json.load(f)
+        print(f"Архив найден: {len(archive)} задач уже сохранено ранее.")
+    except Exception as e:
+        print(f"Не удалось прочитать архив ({e}), начинаю с нуля.")
+        archive = {}
+
+is_first_run = not archive
 
 print("Загружаю сотрудников...")
 raw_users = fetch_all_list(USERS_WEBHOOK, "user.get")
@@ -182,19 +204,42 @@ except Exception as e:
     raw_departments = []
 print(f"  получено: {len(raw_departments)}")
 
-print("Загружаю задачи...")
-task_filter = {
-    ">=CREATED_DATE": period_start.strftime("%Y-%m-%dT00:00:00"),
-    "<=CREATED_DATE": period_end.strftime("%Y-%m-%dT23:59:59"),
-}
+if is_first_run:
+    print(f"Первый запуск: полная выгрузка задач с {period_start.date()} по {period_end.date()}...")
+    task_filter = {
+        ">=CREATED_DATE": period_start.strftime("%Y-%m-%dT00:00:00"),
+        "<=CREATED_DATE": period_end.strftime("%Y-%m-%dT23:59:59"),
+    }
+else:
+    fetch_since = now - dt.timedelta(days=LOOKBACK_DAYS)
+    print(f"Инкрементальное обновление: задачи, изменённые с {fetch_since.date()}...")
+    task_filter = {
+        ">=CHANGED_DATE": fetch_since.strftime("%Y-%m-%dT00:00:00"),
+    }
+
 if EXCLUDED_USER_IDS:
     task_filter["!RESPONSIBLE_ID"] = sorted(EXCLUDED_USER_IDS)
-raw_tasks = fetch_all_list(
+
+fetched_tasks = fetch_all_list(
     TASKS_WEBHOOK, "tasks.task.list",
     base_params={"filter": task_filter, "order": {"ID": "asc"}},
 )
-raw_tasks = [normalize_task(t) for t in raw_tasks]
-print(f"  получено: {len(raw_tasks)}")
+fetched_tasks = [normalize_task(t) for t in fetched_tasks]
+print(f"  получено за этот запуск: {len(fetched_tasks)}")
+
+# Сливаем свежескачанное в архив (перезаписываем по ID — новые данные всегда точнее).
+for t in fetched_tasks:
+    tid = str(t.get("ID"))
+    if tid:
+        archive[tid] = t
+
+with open(ARCHIVE_PATH, "w", encoding="utf-8") as f:
+    os.makedirs(os.path.dirname(ARCHIVE_PATH) or ".", exist_ok=True)
+    json.dump(archive, f, ensure_ascii=False)
+print(f"Архив обновлён: всего {len(archive)} задач.")
+
+raw_tasks = list(archive.values())
+print(f"Всего задач для пересчёта статистики: {len(raw_tasks)}")
 
 # ============================== INDEX ==============================
 
