@@ -130,7 +130,18 @@
       </div>
       <div class="field">
         <label for="f-emp">Сотрудник</label>
-        <select id="f-emp"><option value="">Все сотрудники</option></select>
+        <input type="text" id="f-emp" list="emp-datalist" placeholder="Все — начните печатать имя" autocomplete="off">
+        <datalist id="emp-datalist"></datalist>
+      </div>
+      <div class="field">
+        <label for="f-status">Статус</label>
+        <select id="f-status">
+          <option value="">Все статусы</option>
+          <option value="done">Завершено</option>
+          <option value="in_progress">В работе</option>
+          <option value="overdue_now">Просрочено сейчас</option>
+          <option value="no_deadline">Без дедлайна</option>
+        </select>
       </div>
       <div class="field">
         <label for="f-from">Крайний срок с</label>
@@ -139,6 +150,10 @@
       <div class="field">
         <label for="f-to">Крайний срок по</label>
         <input type="date" id="f-to">
+      </div>
+      <div class="field" style="min-width:220px;">
+        <label for="f-search">Поиск по названию задачи</label>
+        <input type="text" id="f-search" placeholder="Введите часть названия...">
       </div>
       <button id="f-reset">Сбросить фильтры</button>
     </div>
@@ -228,20 +243,24 @@ function initFilters(data) {
   });
 
   document.getElementById('f-from').value = data.period_start;
-  document.getElementById('f-to').value = data.period_end;
+  document.getElementById('f-to').value = '';
 
   refreshEmployeeOptions();
 
   deptSelect.addEventListener('change', () => { refreshEmployeeOptions(); applyFiltersAndRender(); });
-  document.getElementById('f-emp').addEventListener('change', applyFiltersAndRender);
+  document.getElementById('f-emp').addEventListener('input', applyFiltersAndRender);
+  document.getElementById('f-status').addEventListener('change', applyFiltersAndRender);
   document.getElementById('f-from').addEventListener('change', applyFiltersAndRender);
   document.getElementById('f-to').addEventListener('change', applyFiltersAndRender);
+  document.getElementById('f-search').addEventListener('input', applyFiltersAndRender);
   document.getElementById('f-reset').addEventListener('click', () => {
     deptSelect.value = '';
     refreshEmployeeOptions();
     document.getElementById('f-emp').value = '';
+    document.getElementById('f-status').value = '';
     document.getElementById('f-from').value = RAW.period_start;
-    document.getElementById('f-to').value = RAW.period_end;
+    document.getElementById('f-to').value = '';
+    document.getElementById('f-search').value = '';
     applyFiltersAndRender();
   });
 
@@ -256,31 +275,38 @@ function initFilters(data) {
 
 function refreshEmployeeOptions() {
   const dept = document.getElementById('f-dept').value;
-  const empSelect = document.getElementById('f-emp');
-  const current = empSelect.value;
-  empSelect.innerHTML = '<option value="">Все сотрудники</option>';
+  const datalist = document.getElementById('emp-datalist');
+  datalist.innerHTML = '';
   const emps = [...new Set(
     RAW.tasks.filter(t => !dept || t.dept === dept).map(t => t.employee).filter(Boolean)
   )].sort();
   emps.forEach(e => {
     const opt = document.createElement('option');
-    opt.value = e; opt.textContent = e;
-    empSelect.appendChild(opt);
+    opt.value = e;
+    datalist.appendChild(opt);
   });
-  if (emps.includes(current)) empSelect.value = current;
 }
 
 function applyFiltersAndRender() {
   const dept = document.getElementById('f-dept').value;
-  const emp = document.getElementById('f-emp').value;
+  const empQuery = document.getElementById('f-emp').value.trim().toLowerCase();
+  const status = document.getElementById('f-status').value;
   const from = document.getElementById('f-from').value;
   const to = document.getElementById('f-to').value;
+  const searchQuery = document.getElementById('f-search').value.trim().toLowerCase();
 
   const filtered = RAW.tasks.filter(t => {
     if (dept && t.dept !== dept) return false;
-    if (emp && t.employee !== emp) return false;
-    if (from && t.deadline && t.deadline < from) return false;
-    if (to && t.deadline && t.deadline > to) return false;
+    if (empQuery && !(t.employee || '').toLowerCase().includes(empQuery)) return false;
+    if (status === 'done' && !t.done) return false;
+    if (status === 'in_progress' && !t.in_progress) return false;
+    if (status === 'overdue_now' && !t.overdue_now) return false;
+    if (status === 'no_deadline' && !t.no_deadline) return false;
+    // Если у задачи есть крайний срок — фильтруем по нему; если нет — по дате создания.
+    const effectiveDate = t.deadline || t.created;
+    if (from && effectiveDate && effectiveDate < from) return false;
+    if (to && effectiveDate && effectiveDate > to) return false;
+    if (searchQuery && !(t.title || '').toLowerCase().includes(searchQuery)) return false;
     return true;
   });
 
