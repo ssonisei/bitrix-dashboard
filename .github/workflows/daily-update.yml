@@ -26,6 +26,7 @@ jobs:
 
       - name: Run daily_update.py
         env:
+          PYTHONUNBUFFERED: "1"
           TASKS_WEBHOOK: ${{ secrets.TASKS_WEBHOOK }}
           USERS_WEBHOOK: ${{ secrets.USERS_WEBHOOK }}
           DEPARTMENTS_WEBHOOK: ${{ secrets.DEPARTMENTS_WEBHOOK }}
