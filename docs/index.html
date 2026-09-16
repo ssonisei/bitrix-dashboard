@@ -18,7 +18,6 @@
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #17171533;
       --bg: #131311;
       --card: #1d1d1a;
       --border: #33322e;
@@ -36,7 +35,41 @@
   }
   .wrap { max-width: 1200px; margin: 0 auto; }
   h1 { font-size: 22px; font-weight: 600; margin: 0 0 4px; }
-  .subtitle { color: var(--text-muted); font-size: 14px; margin: 0 0 24px; }
+  .subtitle { color: var(--text-muted); font-size: 14px; margin: 0 0 20px; }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: flex-end;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 24px;
+  }
+  .filters .field { display: flex; flex-direction: column; gap: 4px; min-width: 160px; }
+  .filters label { font-size: 12px; color: var(--text-muted); }
+  .filters select, .filters input[type=date] {
+    padding: 7px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 13px;
+  }
+  .filters button {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .filters button:hover { border-color: var(--accent); }
+  .filter-summary { font-size: 12px; color: var(--text-muted); margin-bottom: 20px; }
+
   .kpi-row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -64,7 +97,8 @@
   .chart-wrap { position: relative; height: 300px; }
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
   th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
-  th { color: var(--text-muted); font-weight: 500; }
+  th { color: var(--text-muted); font-weight: 500; cursor: pointer; user-select: none; }
+  th:hover { color: var(--text); }
   tr:last-child td { border-bottom: none; }
   .pill {
     display: inline-block;
@@ -79,6 +113,7 @@
   a:hover { text-decoration: underline; }
   .updated { color: var(--text-muted); font-size: 12px; margin-top: 24px; text-align: center; }
   .loading, .error { text-align: center; padding: 60px 20px; color: var(--text-muted); }
+  .empty-row td { text-align: center; color: var(--text-muted); }
 </style>
 </head>
 <body>
@@ -87,6 +122,28 @@
   <p class="subtitle" id="period-label">Загрузка данных...</p>
 
   <div id="content" style="display:none;">
+
+    <div class="filters">
+      <div class="field">
+        <label for="f-dept">Отдел</label>
+        <select id="f-dept"><option value="">Все отделы</option></select>
+      </div>
+      <div class="field">
+        <label for="f-emp">Сотрудник</label>
+        <select id="f-emp"><option value="">Все сотрудники</option></select>
+      </div>
+      <div class="field">
+        <label for="f-from">Крайний срок с</label>
+        <input type="date" id="f-from">
+      </div>
+      <div class="field">
+        <label for="f-to">Крайний срок по</label>
+        <input type="date" id="f-to">
+      </div>
+      <button id="f-reset">Сбросить фильтры</button>
+    </div>
+    <p class="filter-summary" id="filter-summary"></p>
+
     <div class="kpi-row" id="kpi-row"></div>
 
     <section>
@@ -97,14 +154,14 @@
     </section>
 
     <section>
-      <h2>Топ-10 отделов по нагрузке</h2>
+      <h2>Отделы по нагрузке</h2>
       <div class="card">
         <div class="chart-wrap"><canvas id="deptChart" role="img" aria-label="Количество задач по отделам"></canvas></div>
       </div>
     </section>
 
     <section>
-      <h2>Просроченные сейчас (топ-15)</h2>
+      <h2>Просроченные сейчас</h2>
       <div class="card">
         <table id="overdue-table">
           <thead><tr><th>Задача</th><th>Сотрудник</th><th>Отдел</th><th>Дней просрочки</th></tr></thead>
@@ -114,10 +171,17 @@
     </section>
 
     <section>
-      <h2>Все сотрудники</h2>
+      <h2>Сотрудники</h2>
       <div class="card" style="overflow-x:auto;">
         <table id="emp-table">
-          <thead><tr><th>Отдел</th><th>Сотрудник</th><th>Всего</th><th>Завершено</th><th>% завершено</th><th>Просрочено</th></tr></thead>
+          <thead><tr>
+            <th data-sort="dept">Отдел</th>
+            <th data-sort="fio">Сотрудник</th>
+            <th data-sort="total">Всего</th>
+            <th data-sort="done">Завершено</th>
+            <th data-sort="pct_done">% завершено</th>
+            <th data-sort="overdue_now">Просрочено</th>
+          </tr></thead>
           <tbody></tbody>
         </table>
       </div>
@@ -130,62 +194,170 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
+let RAW = null;
+let trendChart = null, deptChart = null;
+let empSort = { key: 'total', dir: -1 };
+
 fetch('data.json?t=' + Date.now())
   .then(r => {
     if (!r.ok) throw new Error('data.json не найден');
     return r.json();
   })
-  .then(render)
+  .then(data => {
+    RAW = data;
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+    document.getElementById('updated-label').textContent =
+      'Обновлено: ' + new Date(data.generated_at).toLocaleString('ru-RU');
+    initFilters(data);
+    applyFiltersAndRender();
+  })
   .catch(err => {
     document.getElementById('loading').innerHTML =
       '<div class="error">Не удалось загрузить данные: ' + err.message +
       '<br>Убедитесь, что daily_update.py уже отработал хотя бы раз.</div>';
   });
 
-function render(data) {
-  document.getElementById('loading').style.display = 'none';
-  document.getElementById('content').style.display = 'block';
-  document.getElementById('period-label').textContent =
-    'Период: ' + data.period_start + ' — ' + data.period_end;
-  document.getElementById('updated-label').textContent =
-    'Обновлено: ' + new Date(data.generated_at).toLocaleString('ru-RU');
+function initFilters(data) {
+  const depts = [...new Set(data.tasks.map(t => t.dept).filter(Boolean))].sort();
+  const deptSelect = document.getElementById('f-dept');
+  depts.forEach(d => {
+    const opt = document.createElement('option');
+    opt.value = d; opt.textContent = d;
+    deptSelect.appendChild(opt);
+  });
 
-  const totalTasks = data.employees.reduce((s, e) => s + e.total, 0);
-  const totalDone = data.employees.reduce((s, e) => s + e.done, 0);
-  const totalOverdue = data.employees.reduce((s, e) => s + e.overdue_now, 0);
-  const totalNoDeadline = data.employees.reduce((s, e) => s + e.no_deadline, 0);
-  const pctDone = totalTasks ? Math.round(100 * totalDone / totalTasks) : 0;
+  document.getElementById('f-from').value = data.period_start;
+  document.getElementById('f-to').value = data.period_end;
+
+  refreshEmployeeOptions();
+
+  deptSelect.addEventListener('change', () => { refreshEmployeeOptions(); applyFiltersAndRender(); });
+  document.getElementById('f-emp').addEventListener('change', applyFiltersAndRender);
+  document.getElementById('f-from').addEventListener('change', applyFiltersAndRender);
+  document.getElementById('f-to').addEventListener('change', applyFiltersAndRender);
+  document.getElementById('f-reset').addEventListener('click', () => {
+    deptSelect.value = '';
+    refreshEmployeeOptions();
+    document.getElementById('f-emp').value = '';
+    document.getElementById('f-from').value = RAW.period_start;
+    document.getElementById('f-to').value = RAW.period_end;
+    applyFiltersAndRender();
+  });
+
+  document.querySelectorAll('#emp-table th[data-sort]').forEach(th => {
+    th.addEventListener('click', () => {
+      const key = th.dataset.sort;
+      if (empSort.key === key) empSort.dir *= -1; else { empSort.key = key; empSort.dir = -1; }
+      applyFiltersAndRender();
+    });
+  });
+}
+
+function refreshEmployeeOptions() {
+  const dept = document.getElementById('f-dept').value;
+  const empSelect = document.getElementById('f-emp');
+  const current = empSelect.value;
+  empSelect.innerHTML = '<option value="">Все сотрудники</option>';
+  const emps = [...new Set(
+    RAW.tasks.filter(t => !dept || t.dept === dept).map(t => t.employee).filter(Boolean)
+  )].sort();
+  emps.forEach(e => {
+    const opt = document.createElement('option');
+    opt.value = e; opt.textContent = e;
+    empSelect.appendChild(opt);
+  });
+  if (emps.includes(current)) empSelect.value = current;
+}
+
+function applyFiltersAndRender() {
+  const dept = document.getElementById('f-dept').value;
+  const emp = document.getElementById('f-emp').value;
+  const from = document.getElementById('f-from').value;
+  const to = document.getElementById('f-to').value;
+
+  const filtered = RAW.tasks.filter(t => {
+    if (dept && t.dept !== dept) return false;
+    if (emp && t.employee !== emp) return false;
+    if (from && t.deadline && t.deadline < from) return false;
+    if (to && t.deadline && t.deadline > to) return false;
+    return true;
+  });
+
+  document.getElementById('period-label').textContent =
+    'Период данных: ' + RAW.period_start + ' — ' + RAW.period_end + ' (обновляется ежедневно)';
+  document.getElementById('filter-summary').textContent =
+    'Показано задач: ' + filtered.length + ' из ' + RAW.tasks.length;
+
+  renderKpis(filtered);
+  renderTrend(filtered, from || RAW.period_start, to || RAW.period_end);
+  renderDeptChart(filtered);
+  renderOverdue(filtered);
+  renderEmployees(filtered);
+}
+
+function renderKpis(tasks) {
+  const total = tasks.length;
+  const done = tasks.filter(t => t.done).length;
+  const overdueNow = tasks.filter(t => t.overdue_now).length;
+  const noDeadline = tasks.filter(t => t.no_deadline).length;
+  const depts = new Set(tasks.map(t => t.dept).filter(Boolean)).size;
+  const emps = new Set(tasks.map(t => t.employee).filter(Boolean)).size;
+  const pctDone = total ? Math.round(100 * done / total) : 0;
 
   const kpis = [
-    { label: 'Всего задач', value: totalTasks, cls: '' },
-    { label: 'Завершено', value: totalDone + ' (' + pctDone + '%)', cls: 'success' },
-    { label: 'Просрочено сейчас', value: totalOverdue, cls: totalOverdue > 0 ? 'danger' : '' },
-    { label: 'Без дедлайна', value: totalNoDeadline, cls: '' },
-    { label: 'Сотрудников', value: data.employees.length, cls: '' },
-    { label: 'Отделов', value: data.departments.length, cls: '' },
+    { label: 'Всего задач', value: total, cls: '' },
+    { label: 'Завершено', value: done + ' (' + pctDone + '%)', cls: 'success' },
+    { label: 'Просрочено сейчас', value: overdueNow, cls: overdueNow > 0 ? 'danger' : '' },
+    { label: 'Без дедлайна', value: noDeadline, cls: '' },
+    { label: 'Сотрудников', value: emps, cls: '' },
+    { label: 'Отделов', value: depts, cls: '' },
   ];
   document.getElementById('kpi-row').innerHTML = kpis.map(k =>
     '<div class="kpi"><div class="label">' + k.label + '</div><div class="value ' + k.cls + '">' + k.value + '</div></div>'
   ).join('');
+}
 
-  new Chart(document.getElementById('trendChart'), {
+function renderTrend(tasks, from, to) {
+  const counts = {};
+  const start = new Date(from), end = new Date(to);
+  for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
+    counts[d.toISOString().slice(0, 10)] = { created: 0, completed: 0 };
+  }
+  tasks.forEach(t => {
+    if (t.created && counts[t.created]) counts[t.created].created++;
+    if (t.done && t.closed && counts[t.closed]) counts[t.closed].completed++;
+  });
+  const labels = Object.keys(counts).sort();
+
+  if (trendChart) trendChart.destroy();
+  trendChart = new Chart(document.getElementById('trendChart'), {
     type: 'line',
     data: {
-      labels: data.daily_trend.map(d => d.date.slice(5)),
+      labels: labels.map(d => d.slice(5)),
       datasets: [
-        { label: 'Создано', data: data.daily_trend.map(d => d.created), borderColor: '#2a78d6', backgroundColor: 'rgba(42,120,214,0.1)', fill: true, tension: 0.2 },
-        { label: 'Завершено', data: data.daily_trend.map(d => d.completed), borderColor: '#1baf7a', backgroundColor: 'rgba(27,175,122,0.1)', fill: true, tension: 0.2 },
+        { label: 'Создано', data: labels.map(d => counts[d].created), borderColor: '#2a78d6', backgroundColor: 'rgba(42,120,214,0.1)', fill: true, tension: 0.2 },
+        { label: 'Завершено', data: labels.map(d => counts[d].completed), borderColor: '#1baf7a', backgroundColor: 'rgba(27,175,122,0.1)', fill: true, tension: 0.2 },
       ],
     },
     options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true } } },
   });
+}
 
-  const topDepts = [...data.departments].sort((a, b) => b.total - a.total).slice(0, 10);
-  new Chart(document.getElementById('deptChart'), {
+function renderDeptChart(tasks) {
+  const byDept = {};
+  tasks.forEach(t => {
+    if (!t.dept) return;
+    byDept[t.dept] = (byDept[t.dept] || 0) + 1;
+  });
+  const top = Object.entries(byDept).sort((a, b) => b[1] - a[1]).slice(0, 12);
+
+  if (deptChart) deptChart.destroy();
+  deptChart = new Chart(document.getElementById('deptChart'), {
     type: 'bar',
     data: {
-      labels: topDepts.map(d => d.dept),
-      datasets: [{ label: 'Задач', data: topDepts.map(d => d.total), backgroundColor: '#2a78d6', borderRadius: 4 }],
+      labels: top.map(d => d[0]),
+      datasets: [{ label: 'Задач', data: top.map(d => d[1]), backgroundColor: '#2a78d6', borderRadius: 4 }],
     },
     options: {
       indexAxis: 'y',
@@ -195,22 +367,49 @@ function render(data) {
       scales: { x: { beginAtZero: true } },
     },
   });
+}
 
-  const overdueBody = document.querySelector('#overdue-table tbody');
-  overdueBody.innerHTML = data.top_overdue.map(t =>
+function renderOverdue(tasks) {
+  const overdue = tasks.filter(t => t.overdue_now && t.overdue_days > 0)
+    .sort((a, b) => b.overdue_days - a.overdue_days)
+    .slice(0, 20);
+  const body = document.querySelector('#overdue-table tbody');
+  body.innerHTML = overdue.length ? overdue.map(t =>
     '<tr><td><a href="' + t.url + '" target="_blank">' + escapeHtml(t.title) + '</a></td>' +
     '<td>' + escapeHtml(t.employee) + '</td>' +
     '<td>' + escapeHtml(t.dept) + '</td>' +
-    '<td><span class="pill bad">' + t.days + ' дн.</span></td></tr>'
-  ).join('') || '<tr><td colspan="4" style="text-align:center;color:var(--text-muted);">Просроченных задач нет</td></tr>';
+    '<td><span class="pill bad">' + t.overdue_days + ' дн.</span></td></tr>'
+  ).join('') : '<tr class="empty-row"><td colspan="4">Просроченных задач нет</td></tr>';
+}
 
-  const empBody = document.querySelector('#emp-table tbody');
-  empBody.innerHTML = data.employees.map(e =>
+function renderEmployees(tasks) {
+  const byEmp = {};
+  tasks.forEach(t => {
+    if (!t.employee) return;
+    if (!byEmp[t.employee]) byEmp[t.employee] = { dept: t.dept, fio: t.employee, total: 0, done: 0, overdue_now: 0 };
+    byEmp[t.employee].total++;
+    if (t.done) byEmp[t.employee].done++;
+    if (t.overdue_now) byEmp[t.employee].overdue_now++;
+  });
+  let rows = Object.values(byEmp).map(e => ({
+    ...e,
+    pct_done: e.total ? Math.round(100 * e.done / e.total) : 0,
+  }));
+
+  rows.sort((a, b) => {
+    const k = empSort.key;
+    if (a[k] < b[k]) return -1 * empSort.dir;
+    if (a[k] > b[k]) return 1 * empSort.dir;
+    return 0;
+  });
+
+  const body = document.querySelector('#emp-table tbody');
+  body.innerHTML = rows.length ? rows.map(e =>
     '<tr><td>' + escapeHtml(e.dept) + '</td><td>' + escapeHtml(e.fio) + '</td>' +
     '<td>' + e.total + '</td><td>' + e.done + '</td>' +
     '<td><span class="pill ' + (e.pct_done >= 80 ? 'ok' : 'bad') + '">' + e.pct_done + '%</span></td>' +
     '<td>' + (e.overdue_now > 0 ? '<span class="pill bad">' + e.overdue_now + '</span>' : '0') + '</td></tr>'
-  ).join('');
+  ).join('') : '<tr class="empty-row"><td colspan="6">Нет данных за выбранный период</td></tr>';
 }
 
 function escapeHtml(s) {
