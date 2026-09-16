@@ -29,15 +29,15 @@ import requests
 
 # ============================== CONFIG ==============================
 
-TASKS_WEBHOOK = os.environ.get(
-    "TASKS_WEBHOOK", "https://avatariya.bitrix24.kz/rest/381580/0m3cyf7cpgj4kucm/"
-)
-USERS_WEBHOOK = os.environ.get(
-    "USERS_WEBHOOK", "https://avatariya.bitrix24.kz/rest/381580/j7q66bs4vaqptw7j/"
-)
-DEPARTMENTS_WEBHOOK = os.environ.get(
-    "DEPARTMENTS_WEBHOOK", "https://avatariya.bitrix24.kz/rest/381580/umo1sepf459s65i6/"
-)
+TASKS_WEBHOOK = os.environ.get("TASKS_WEBHOOK")
+USERS_WEBHOOK = os.environ.get("USERS_WEBHOOK")
+DEPARTMENTS_WEBHOOK = os.environ.get("DEPARTMENTS_WEBHOOK")
+
+if not (TASKS_WEBHOOK and USERS_WEBHOOK and DEPARTMENTS_WEBHOOK):
+    raise SystemExit(
+        "Не заданы вебхуки. Установи переменные окружения (или GitHub Secrets) "
+        "TASKS_WEBHOOK, USERS_WEBHOOK, DEPARTMENTS_WEBHOOK."
+    )
 
 _excluded_env = os.environ.get("EXCLUDED_USER_IDS", "")
 EXCLUDED_USER_IDS = {x.strip() for x in _excluded_env.split(",") if x.strip()} or {
