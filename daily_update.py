@@ -339,8 +339,8 @@ for t in fetched_tasks:
     if tid:
         archive[tid] = t
 
+os.makedirs(os.path.dirname(ARCHIVE_PATH) or ".", exist_ok=True)
 with open(ARCHIVE_PATH, "w", encoding="utf-8") as f:
-    os.makedirs(os.path.dirname(ARCHIVE_PATH) or ".", exist_ok=True)
     json.dump(archive, f, ensure_ascii=False)
 
 raw_tasks = list(archive.values())
