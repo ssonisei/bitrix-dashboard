@@ -44,7 +44,15 @@ EXCLUDED_USER_IDS = {x.strip() for x in _excluded_env.split(",") if x.strip()} o
     "547722", "652618", "24724", "11428", "178192",
 }
 
-ROLLING_DAYS = int(os.environ.get("ROLLING_DAYS", "30"))
+# Задачи, у которых в названии/описании встречается любая из этих фраз
+# (без учёта регистра), полностью исключаются из дашборда — это
+# автоматические CRM-напоминания, а не реальная рабочая задача.
+_excluded_titles_env = os.environ.get("EXCLUDED_TITLE_SUBSTRINGS", "")
+EXCLUDED_TITLE_SUBSTRINGS = [
+    x.strip().lower() for x in _excluded_titles_env.split(",") if x.strip()
+] or ["связаться с клиентом"]
+
+PERIOD_START_STR = os.environ.get("PERIOD_START", "2026-07-01")
 OUTPUT_JSON = os.environ.get("OUTPUT_JSON", "docs/data.json")
 
 REQUEST_DELAY = 0.25
@@ -158,9 +166,9 @@ def normalize_task(t):
 
 now = dt.datetime.now()
 period_end = now
-period_start = now - dt.timedelta(days=ROLLING_DAYS)
+period_start = dt.datetime.strptime(PERIOD_START_STR, "%Y-%m-%d")
 
-print(f"Период: {period_start.date()} — {period_end.date()} (последние {ROLLING_DAYS} дн.)")
+print(f"Период: {period_start.date()} — {period_end.date()} (с фиксированной даты начала)")
 
 print("Загружаю сотрудников...")
 raw_users = fetch_all_list(USERS_WEBHOOK, "user.get")
@@ -215,6 +223,7 @@ quality = {
     "excluded_unknown_responsible": 0,
     "excluded_inactive_responsible": 0,
     "excluded_by_excluded_list": 0,
+    "excluded_by_title": 0,
 }
 
 emp_stats = defaultdict(lambda: {
@@ -228,6 +237,7 @@ dept_stats = defaultdict(lambda: {
 })
 daily_counts = defaultdict(lambda: {"created": 0, "completed": 0})
 top_overdue = []
+tasks_out = []
 
 STATUS_DONE = {"5"}
 STATUS_IN_PROGRESS = {"2", "3"}
@@ -245,6 +255,11 @@ for t in raw_tasks:
         continue
     if resp_id in EXCLUDED_USER_IDS:
         quality["excluded_by_excluded_list"] += 1
+        continue
+
+    title_lower = (t.get("TITLE") or "").lower()
+    if any(sub in title_lower for sub in EXCLUDED_TITLE_SUBSTRINGS):
+        quality["excluded_by_title"] += 1
         continue
 
     valid_tasks += 1
@@ -303,18 +318,39 @@ for t in raw_tasks:
         if closed_overdue:
             ds["closed_overdue"] += 1
 
+    task_url = f"{TASKS_WEBHOOK.split('/rest/')[0]}/company/personal/user/{resp_id}/tasks/task/view/{t.get('ID')}/"
+
     if overdue_now and overdue_days > 0:
         top_overdue.append({
             "title": t.get("TITLE", ""),
             "employee": employee_fio,
             "dept": dept_name,
             "days": overdue_days,
-            "url": f"{TASKS_WEBHOOK.split('/rest/')[0]}/company/personal/user/{resp_id}/tasks/task/view/{t.get('ID')}/",
+            "url": task_url,
         })
+
+    # Компактная запись по задаче — нужна дашборду для динамических фильтров
+    # (по сотруднику, отделу, диапазону дат) без повторной выгрузки.
+    tasks_out.append({
+        "dept": dept_name,
+        "employee": employee_fio,
+        "created": created.date().isoformat() if created else None,
+        "closed": closed.date().isoformat() if closed else None,
+        "deadline": deadline.date().isoformat() if deadline else None,
+        "done": is_done,
+        "in_progress": status in STATUS_IN_PROGRESS,
+        "overdue_now": overdue_now,
+        "closed_overdue": closed_overdue,
+        "overdue_days": overdue_days,
+        "no_deadline": not has_deadline,
+        "title": t.get("TITLE", ""),
+        "url": task_url,
+    })
 
 quality["added_tasks"] = valid_tasks
 print(f"Итог: добавлено {valid_tasks}, исключено (неизвестный ID) {quality['excluded_unknown_responsible']}, "
-      f"неактивных {quality['excluded_inactive_responsible']}, по списку {quality['excluded_by_excluded_list']}")
+      f"неактивных {quality['excluded_inactive_responsible']}, по списку {quality['excluded_by_excluded_list']}, "
+      f"по названию {quality['excluded_by_title']}")
 
 # ============================== BUILD JSON ==============================
 
@@ -359,6 +395,7 @@ output = {
     "departments": departments_out,
     "daily_trend": daily_trend,
     "top_overdue": top_overdue,
+    "tasks": tasks_out,
 }
 
 os.makedirs(os.path.dirname(OUTPUT_JSON) or ".", exist_ok=True)
