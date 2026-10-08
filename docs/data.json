@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-10-07T21:15:21",
+  "generated_at": "2026-10-08T21:15:53",
   "period_start": "2026-08-01",
-  "period_end": "2026-10-07",
+  "period_end": "2026-10-08",
   "quality": {
-    "total_input_tasks": 29028,
-    "added_tasks": 1104,
+    "total_input_tasks": 29594,
+    "added_tasks": 1113,
     "excluded_unknown_responsible": 2,
     "excluded_inactive_responsible": 5576,
-    "excluded_by_excluded_list": 9894,
-    "excluded_by_title": 12209,
-    "excluded_by_department": 243
+    "excluded_by_excluded_list": 10243,
+    "excluded_by_title": 12415,
+    "excluded_by_department": 245
   },
   "employees": [
     {
@@ -172,13 +172,13 @@
       "dept": "Отдел Event",
       "fio": "Кайгородова Кристина Дмитриевна",
       "position": "Event менеджер",
-      "total": 80,
+      "total": 82,
       "done": 53,
-      "in_progress": 26,
+      "in_progress": 28,
       "overdue_now": 1,
       "closed_overdue": 26,
       "no_deadline": 1,
-      "pct_done": 66.2,
+      "pct_done": 64.6,
       "avg_overdue": 5.6
     },
     {
@@ -225,13 +225,13 @@
       "fio": "Севидова Марина",
       "position": "Директор отдела закупа",
       "total": 3,
-      "done": 1,
+      "done": 2,
       "in_progress": 0,
-      "overdue_now": 2,
-      "closed_overdue": 1,
+      "overdue_now": 1,
+      "closed_overdue": 2,
       "no_deadline": 0,
-      "pct_done": 33.3,
-      "avg_overdue": 20.0
+      "pct_done": 66.7,
+      "avg_overdue": 21.0
     },
     {
       "dept": "Отдел закупок",
@@ -250,26 +250,26 @@
       "dept": "Отдел маркетинга",
       "fio": "Асанов Бауыржан",
       "position": "Директор по маркетингу",
-      "total": 79,
-      "done": 4,
-      "in_progress": 75,
+      "total": 71,
+      "done": 2,
+      "in_progress": 69,
       "overdue_now": 55,
-      "closed_overdue": 3,
+      "closed_overdue": 1,
       "no_deadline": 1,
-      "pct_done": 5.1,
-      "avg_overdue": 21.3
+      "pct_done": 2.8,
+      "avg_overdue": 59.0
     },
     {
       "dept": "Отдел маркетинга",
       "fio": "Мауленовa Аружан",
       "position": "Бренд-менеджер",
-      "total": 2,
-      "done": 0,
-      "in_progress": 0,
+      "total": 10,
+      "done": 2,
+      "in_progress": 6,
       "overdue_now": 2,
       "closed_overdue": 0,
       "no_deadline": 0,
-      "pct_done": 0.0,
+      "pct_done": 20.0,
       "avg_overdue": 0
     },
     {
@@ -381,12 +381,12 @@
       "fio": "Куатулы Абуханифа",
       "position": "Backend Разработчик",
       "total": 60,
-      "done": 48,
-      "in_progress": 12,
+      "done": 49,
+      "in_progress": 11,
       "overdue_now": 1,
       "closed_overdue": 3,
       "no_deadline": 0,
-      "pct_done": 80.0,
+      "pct_done": 81.7,
       "avg_overdue": 0.0
     },
     {
@@ -550,25 +550,25 @@
       "fio": "Абдуллаева Маржан Омаровна",
       "position": "Финансовый директор",
       "total": 105,
-      "done": 90,
-      "in_progress": 14,
+      "done": 93,
+      "in_progress": 11,
       "overdue_now": 0,
       "closed_overdue": 0,
       "no_deadline": 92,
-      "pct_done": 85.7,
+      "pct_done": 88.6,
       "avg_overdue": 0
     },
     {
       "dept": "Финансовый отдел",
       "fio": "Аралбекова Молдир Амировна",
       "position": "Главный бухгалтер",
-      "total": 34,
+      "total": 37,
       "done": 16,
-      "in_progress": 17,
+      "in_progress": 20,
       "overdue_now": 7,
       "closed_overdue": 16,
       "no_deadline": 0,
-      "pct_done": 47.1,
+      "pct_done": 43.2,
       "avg_overdue": 42.9
     },
     {
@@ -588,14 +588,14 @@
       "dept": "Финансовый отдел",
       "fio": "Мирадил Гулдана Асхаткызы",
       "position": "Финансовый менеджер",
-      "total": 23,
-      "done": 1,
-      "in_progress": 15,
-      "overdue_now": 8,
-      "closed_overdue": 1,
+      "total": 27,
+      "done": 7,
+      "in_progress": 20,
+      "overdue_now": 2,
+      "closed_overdue": 7,
       "no_deadline": 0,
-      "pct_done": 4.3,
-      "avg_overdue": 11.0
+      "pct_done": 25.9,
+      "avg_overdue": 7.9
     }
   ],
   "departments": [
@@ -603,21 +603,21 @@
       "dept": "Проектный IT",
       "employees": 10,
       "total": 379,
-      "done": 275,
-      "in_progress": 81,
+      "done": 276,
+      "in_progress": 80,
       "overdue_now": 53,
       "closed_overdue": 114,
-      "pct_done": 72.6
+      "pct_done": 72.8
     },
     {
       "dept": "Финансовый отдел",
       "employees": 5,
-      "total": 204,
-      "done": 149,
-      "in_progress": 46,
-      "overdue_now": 15,
-      "closed_overdue": 35,
-      "pct_done": 73.0
+      "total": 211,
+      "done": 158,
+      "in_progress": 51,
+      "overdue_now": 9,
+      "closed_overdue": 41,
+      "pct_done": 74.9
     },
     {
       "dept": "Проектный отдел",
@@ -632,12 +632,12 @@
     {
       "dept": "Отдел Event",
       "employees": 3,
-      "total": 89,
+      "total": 91,
       "done": 53,
-      "in_progress": 35,
+      "in_progress": 37,
       "overdue_now": 10,
       "closed_overdue": 26,
-      "pct_done": 59.6
+      "pct_done": 58.2
     },
     {
       "dept": "Отдел маркетинга",
@@ -646,7 +646,7 @@
       "done": 4,
       "in_progress": 75,
       "overdue_now": 57,
-      "closed_overdue": 3,
+      "closed_overdue": 1,
       "pct_done": 4.9
     },
     {
@@ -713,11 +713,11 @@
       "dept": "Отдел закупок",
       "employees": 3,
       "total": 11,
-      "done": 2,
+      "done": 3,
       "in_progress": 5,
-      "overdue_now": 9,
-      "closed_overdue": 2,
-      "pct_done": 18.2
+      "overdue_now": 8,
+      "closed_overdue": 3,
+      "pct_done": 27.3
     },
     {
       "dept": "Банкетные менеджера",
@@ -1484,12 +1484,12 @@
     {
       "date": "2026-10-01",
       "created": 3,
-      "completed": 13
+      "completed": 12
     },
     {
       "date": "2026-10-02",
       "created": 3,
-      "completed": 8
+      "completed": 7
     },
     {
       "date": "2026-10-03",
@@ -1515,6 +1515,11 @@
       "date": "2026-10-07",
       "created": 4,
       "completed": 1
+    },
+    {
+      "date": "2026-10-08",
+      "created": 9,
+      "completed": 13
     }
   ],
   "top_overdue": [
@@ -1522,105 +1527,105 @@
       "title": "Браслеты",
       "employee": "Шойынқап Асия Расылханқызы",
       "dept": "Отдел закупок",
-      "days": 210,
+      "days": 211,
       "url": "https://avatariya.bitrix24.kz/company/personal/user/103944/tasks/task/view/930950/"
     },
     {
       "title": "Напоминаем вам, что необходимо сдать физический договор юристу.",
       "employee": "Умбеткулов Еркен",
       "dept": "Проектный отдел",
-      "days": 108,
+      "days": 109,
       "url": "https://avatariya.bitrix24.kz/company/personal/user/8726/tasks/task/view/1088112/"
     },
     {
       "title": "Напоминаем вам, что необходимо сдать физический договор юристу.",
       "employee": "Умбеткулов Еркен",
       "dept": "Проектный отдел",
-      "days": 95,
+      "days": 96,
       "url": "https://avatariya.bitrix24.kz/company/personal/user/8726/tasks/task/view/1106114/"
     },
     {
       "title": "Внедрить ИИ-аналитику и предиктивные модели на камеры видеонаблюдения — выявление падений, скоплений, нештатных ситуаций, пожароопасных признаков и прогнозирование рисков по зонам и времени (в процессе).",
       "employee": "Амиров Аян Алиакбарулы",
       "dept": "Отдел управления рисками и безопасностью",
-      "days": 83,
+      "days": 84,
       "url": "https://avatariya.bitrix24.kz/company/personal/user/169108/tasks/task/view/904744/"
     },
     {
       "title": "Напоминаем вам, что необходимо сдать физический договор юристу.",
       "employee": "Умбеткулов Еркен",
       "dept": "Проектный отдел",
-      "days": 80,
+      "days": 81,
       "url": "https://avatariya.bitrix24.kz/company/personal/user/8726/tasks/task/view/1130320/"
     },
     {
       "title": "Напоминаем вам, что необходимо сдать физический договор юристу.",
       "employee": "Асенова Дана Бахтияровна",
       "dept": "Проектный отдел",
-      "days": 66,
+      "days": 67,
       "url": "https://avatariya.bitrix24.kz/company/personal/user/380006/tasks/task/view/1151390/"
     },
     {
       "title": "Напоминаем вам, что необходимо сдать физический договор юристу.",
       "employee": "Умбеткулов Еркен",
       "dept": "Проектный отдел",
-      "days": 66,
+      "days": 67,
       "url": "https://avatariya.bitrix24.kz/company/personal/user/8726/tasks/task/view/1151624/"
     },
     {
       "title": "Внедрение ИИ-аналитики (безопасность и контроль)",
       "employee": "Амиров Аян Алиакбарулы",
       "dept": "Отдел управления рисками и безопасностью",
-      "days": 65,
+      "days": 66,
       "url": "https://avatariya.bitrix24.kz/company/personal/user/169108/tasks/task/view/1098394/"
     },
     {
       "title": "Процессы отдела-Настроить процессы внутри отдела и между отделами, маркетинговый план Парков",
       "employee": "Асанов Бауыржан",
       "dept": "Отдел маркетинга",
-      "days": 65,
+      "days": 66,
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121532/"
     },
     {
       "title": "Процессы внутри отдела",
       "employee": "Асанов Бауыржан",
       "dept": "Отдел маркетинга",
-      "days": 65,
+      "days": 66,
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121540/"
     },
     {
       "title": "Написание SMM-стратегии",
       "employee": "Асанов Бауыржан",
       "dept": "Отдел маркетинга",
-      "days": 65,
+      "days": 66,
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121652/"
     },
     {
       "title": "Геймификация- коммуникации и триггеры",
       "employee": "Асанов Бауыржан",
       "dept": "Отдел маркетинга",
-      "days": 65,
+      "days": 66,
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121794/"
     },
     {
       "title": "Работа с аналитикой-Полный аудит аналитики",
       "employee": "Асанов Бауыржан",
       "dept": "Отдел маркетинга",
-      "days": 65,
+      "days": 66,
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121848/"
     },
     {
       "title": "Работа с аналитикой-Ключевые показатели и цели",
       "employee": "Асанов Бауыржан",
       "dept": "Отдел маркетинга",
-      "days": 65,
+      "days": 66,
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121852/"
     },
     {
       "title": "Открытие парка",
       "employee": "Елеукулов Нурбек Ерланулы",
       "dept": "Отдел развития",
-      "days": 64,
+      "days": 65,
       "url": "https://avatariya.bitrix24.kz/company/personal/user/25944/tasks/task/view/1121506/"
     }
   ],
@@ -1845,7 +1850,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 8,
+      "overdue_days": 9,
       "no_deadline": false,
       "title": "Правки: Экран промокодов",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/325612/tasks/task/view/890906/"
@@ -1860,7 +1865,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 18,
+      "overdue_days": 19,
       "no_deadline": false,
       "title": "Правки: Редизайн страницы деталей \"Бонусов\"",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/325612/tasks/task/view/890922/"
@@ -1890,7 +1895,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Сертификации аттракционов",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/169108/tasks/task/view/905090/"
@@ -1920,7 +1925,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 6,
+      "overdue_days": 7,
       "no_deadline": false,
       "title": "Доработки 1С Розницы",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/148974/tasks/task/view/921592/"
@@ -1995,7 +2000,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 5,
+      "overdue_days": 6,
       "no_deadline": false,
       "title": "QR ресторана",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/393924/tasks/task/view/921748/"
@@ -2010,7 +2015,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 6,
+      "overdue_days": 7,
       "no_deadline": false,
       "title": "1С Бухгалтерия",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/148974/tasks/task/view/921750/"
@@ -2085,7 +2090,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 22,
+      "overdue_days": 23,
       "no_deadline": false,
       "title": "Устранение замечаний по электричества парков согласно заключению аудита",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/567050/tasks/task/view/947332/"
@@ -2115,7 +2120,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 12,
+      "overdue_days": 13,
       "no_deadline": false,
       "title": "Вендинги",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/381580/tasks/task/view/971058/"
@@ -2145,7 +2150,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 23,
+      "overdue_days": 24,
       "no_deadline": false,
       "title": "локализация для вебки",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/393924/tasks/task/view/976332/"
@@ -2160,7 +2165,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 12,
+      "overdue_days": 13,
       "no_deadline": false,
       "title": "IIKO обмен с БУ Узб",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/18/tasks/task/view/979092/"
@@ -2175,7 +2180,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 36,
+      "overdue_days": 37,
       "no_deadline": false,
       "title": "Получение оборудования от Еркена",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/325612/tasks/task/view/998468/"
@@ -2190,7 +2195,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 6,
+      "overdue_days": 7,
       "no_deadline": false,
       "title": "Правила обмена из ЦБР в БУ: Номенклатура, Отчет о розни = Реализ + ПКО (за нал)",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/148974/tasks/task/view/1005470/"
@@ -2235,7 +2240,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Регистрацию гостя позволять делать с РМК без детей, количество детей = 0 разрешить",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/148974/tasks/task/view/1013268/"
@@ -2250,7 +2255,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Доработать загрузку из Бигдаты гостей при идентификации забирать инфо mobile_app (булево). Вывести новое поле \"Источник Мобилка\" (да/нет) в отчет Анкетирования в 1С рознице",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/148974/tasks/task/view/1013270/"
@@ -2310,7 +2315,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Провести плановую инвентаризацию ОС посредством ТСД в парках",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/22416/tasks/task/view/1034624/"
@@ -2430,7 +2435,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 6,
+      "overdue_days": 7,
       "no_deadline": false,
       "title": "Проектирование",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1049892/"
@@ -2460,7 +2465,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "3Д план",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1049948/"
@@ -2475,7 +2480,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Бюджет Парка",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1049950/"
@@ -2490,7 +2495,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Декор",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1049956/"
@@ -2505,7 +2510,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Выдача АИ",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1049960/"
@@ -2520,7 +2525,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "ИТ",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/325612/tasks/task/view/1049968/"
@@ -2535,7 +2540,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "API : Получение тестового оборудования для интеграций с API",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/601138/tasks/task/view/1049994/"
@@ -2580,7 +2585,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Браслеты",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/52/tasks/task/view/1051382/"
@@ -2700,7 +2705,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "Игры\\Атракционы",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1051414/"
@@ -2715,7 +2720,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "чеклист - операционный",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1051422/"
@@ -2730,7 +2735,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "калькуляция цен \\ финал",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1051428/"
@@ -2745,7 +2750,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "Пропускная способность",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1051434/"
@@ -2775,7 +2780,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 50,
+      "overdue_days": 51,
       "no_deadline": false,
       "title": "Gamification",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/601138/tasks/task/view/1051440/"
@@ -2790,7 +2795,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Внедрение 2 блока разработки функционала",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/325612/tasks/task/view/1051456/"
@@ -2880,7 +2885,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 36,
+      "overdue_days": 37,
       "no_deadline": false,
       "title": "Маркетинговая стратегия",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1051484/"
@@ -2895,7 +2900,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 36,
+      "overdue_days": 37,
       "no_deadline": false,
       "title": "Предпродажные механики",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1051488/"
@@ -2910,7 +2915,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 19,
+      "overdue_days": 20,
       "no_deadline": false,
       "title": "Цены и пакеты (входные билеты)",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1051490/"
@@ -2940,7 +2945,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 36,
+      "overdue_days": 37,
       "no_deadline": false,
       "title": "Промо и акции - открытие",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1051494/"
@@ -2955,7 +2960,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 36,
+      "overdue_days": 37,
       "no_deadline": false,
       "title": "Промо и акции - повседневно",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1051496/"
@@ -2985,7 +2990,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 19,
+      "overdue_days": 20,
       "no_deadline": false,
       "title": "ДР\\корпоратив пакеты",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1051504/"
@@ -3000,7 +3005,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 6,
+      "overdue_days": 7,
       "no_deadline": false,
       "title": "Мероприятия",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/60934/tasks/task/view/1051506/"
@@ -3015,7 +3020,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 36,
+      "overdue_days": 37,
       "no_deadline": false,
       "title": "Музыка",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/60934/tasks/task/view/1051508/"
@@ -3030,7 +3035,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "ДР и Корп-ивы",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/60934/tasks/task/view/1051510/"
@@ -3045,7 +3050,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "Турниры \\ соревнования",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/60934/tasks/task/view/1051516/"
@@ -3060,7 +3065,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "Сценарии",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/60934/tasks/task/view/1051518/"
@@ -3075,7 +3080,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "Арт планирование",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/60934/tasks/task/view/1051520/"
@@ -3105,7 +3110,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "фин модель и привязка к ретеншн",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1057478/"
@@ -3150,7 +3155,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 54,
+      "overdue_days": 55,
       "no_deadline": false,
       "title": "Ташкент открытие парка",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/446550/tasks/task/view/1070216/"
@@ -3180,7 +3185,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 36,
+      "overdue_days": 37,
       "no_deadline": false,
       "title": "Программа лояльности",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1078382/"
@@ -3225,7 +3230,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "Подключить двери к АБС при ЧС  с Аяном",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/408128/tasks/task/view/1090160/"
@@ -3240,7 +3245,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 49,
+      "overdue_days": 50,
       "no_deadline": false,
       "title": "Горка без оператора. Подготовить бюджет по доп  камерам и согласовать установку",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/408128/tasks/task/view/1090164/"
@@ -3255,7 +3260,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 43,
+      "overdue_days": 44,
       "no_deadline": false,
       "title": "Горка без оператора. Сделать понятную навигацию для детей",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/408128/tasks/task/view/1090166/"
@@ -3270,7 +3275,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 48,
+      "overdue_days": 49,
       "no_deadline": false,
       "title": "Горка без оператора. Найти и установить звуковые сигналы (стоп,гоу)",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/408128/tasks/task/view/1090170/"
@@ -3285,7 +3290,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 47,
+      "overdue_days": 48,
       "no_deadline": false,
       "title": "Подготовить новое решение с выставки по  КД Караганда + бюджет",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/408128/tasks/task/view/1090186/"
@@ -3315,7 +3320,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Скидка 90% на КСО",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/393924/tasks/task/view/1091450/"
@@ -3360,7 +3365,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 22,
+      "overdue_days": 23,
       "no_deadline": false,
       "title": "Добавить альтернативу Робуксу по подаркам",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1096258/"
@@ -3390,7 +3395,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 65,
+      "overdue_days": 66,
       "no_deadline": false,
       "title": "Внедрение ИИ-аналитики (безопасность и контроль)",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/169108/tasks/task/view/1098394/"
@@ -3405,7 +3410,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Автоматизация управленческой статистики",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/169108/tasks/task/view/1098542/"
@@ -3420,7 +3425,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Автоматизация договорной работы (Bitrix24)",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/169108/tasks/task/view/1098578/"
@@ -3435,7 +3440,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Внедрение тендерной комиссии",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/169108/tasks/task/view/1098580/"
@@ -3525,7 +3530,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "Оборудование заказ",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1108082/"
@@ -3570,7 +3575,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "драфт бюджет мероприятий",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/60934/tasks/task/view/1108106/"
@@ -3585,7 +3590,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "ФОТ",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/601138/tasks/task/view/1108110/"
@@ -3600,7 +3605,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "финал бюджет мероприятий",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/60934/tasks/task/view/1108596/"
@@ -3615,7 +3620,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Планировка парка",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1108702/"
@@ -4065,7 +4070,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 54,
+      "overdue_days": 55,
       "no_deadline": false,
       "title": "Ташкент прогрев перед открытием",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/446550/tasks/task/view/1120406/"
@@ -4095,7 +4100,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 62,
+      "overdue_days": 63,
       "no_deadline": false,
       "title": "Подбор персонала Ташкент",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/207120/tasks/task/view/1120462/"
@@ -4230,7 +4235,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "Найти 2–3 локации под «Аватария Экстрим» (первые результаты)",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/25944/tasks/task/view/1121494/"
@@ -4245,7 +4250,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 36,
+      "overdue_days": 37,
       "no_deadline": false,
       "title": "Получить землю от акимата под строительство РЦ",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/25944/tasks/task/view/1121498/"
@@ -4260,7 +4265,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "Контроль переговоров — «Максима»",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/25944/tasks/task/view/1121500/"
@@ -4275,7 +4280,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "Контроль переговоров — новое здание (built-to-suit)",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/25944/tasks/task/view/1121502/"
@@ -4305,7 +4310,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 64,
+      "overdue_days": 65,
       "no_deadline": false,
       "title": "Открытие парка",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/25944/tasks/task/view/1121506/"
@@ -4320,7 +4325,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 36,
+      "overdue_days": 37,
       "no_deadline": false,
       "title": "Реконструкция (13.07 – 01.09)",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/25944/tasks/task/view/1121514/"
@@ -4335,7 +4340,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "Поиск локации под новый проект — площадка с вендингами и аркадными играми",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/25944/tasks/task/view/1121516/"
@@ -4350,7 +4355,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 36,
+      "overdue_days": 37,
       "no_deadline": false,
       "title": "Узаконение мезонина",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/25944/tasks/task/view/1121518/"
@@ -4365,7 +4370,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 65,
+      "overdue_days": 66,
       "no_deadline": false,
       "title": "Процессы отдела-Настроить процессы внутри отдела и между отделами, маркетинговый план Парков",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121532/"
@@ -4380,7 +4385,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 65,
+      "overdue_days": 66,
       "no_deadline": false,
       "title": "Процессы внутри отдела",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121540/"
@@ -4395,7 +4400,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 36,
+      "overdue_days": 37,
       "no_deadline": false,
       "title": "Процессы внутри отдела-регламенты",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121548/"
@@ -4410,7 +4415,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 51,
+      "overdue_days": 52,
       "no_deadline": false,
       "title": "\"Планирование приоритезация-\nФиксация\n стратегических и операционных задач\"",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121554/"
@@ -4440,7 +4445,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 30,
+      "overdue_days": 31,
       "no_deadline": false,
       "title": "Продвижение парка Ташкент",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121582/"
@@ -4455,7 +4460,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 51,
+      "overdue_days": 52,
       "no_deadline": false,
       "title": "Стратегия продвижения по городам: КЗ и УЗ",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121588/"
@@ -4470,7 +4475,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 30,
+      "overdue_days": 31,
       "no_deadline": false,
       "title": "Стратегия продвижения по городам: Казахстан и Узбекистан",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121594/"
@@ -4485,7 +4490,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 58,
+      "overdue_days": 59,
       "no_deadline": false,
       "title": "Партнёрства с косвенными конкурентами",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121596/"
@@ -4500,7 +4505,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 30,
+      "overdue_days": 31,
       "no_deadline": false,
       "title": "Замер результативности",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121600/"
@@ -4515,7 +4520,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 30,
+      "overdue_days": 31,
       "no_deadline": false,
       "title": "Тест гипотез и оптимизация-Стратегия продвижения по городам: Казахстан и Узбекистан",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121608/"
@@ -4530,7 +4535,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 36,
+      "overdue_days": 37,
       "no_deadline": false,
       "title": "Масштабирование -Стратегия продвижения по городам: Казахстан и Узбекистан",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121612/"
@@ -4545,7 +4550,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 65,
+      "overdue_days": 66,
       "no_deadline": false,
       "title": "Написание SMM-стратегии",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121652/"
@@ -4560,7 +4565,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 64,
+      "overdue_days": 65,
       "no_deadline": false,
       "title": "Юнит-экономика SaveMax",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121766/"
@@ -4575,7 +4580,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 36,
+      "overdue_days": 37,
       "no_deadline": false,
       "title": "MVP и пилот SaveMax",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121768/"
@@ -4590,7 +4595,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 36,
+      "overdue_days": 37,
       "no_deadline": false,
       "title": "План масштабирования (SaveMax)",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121772/"
@@ -4605,7 +4610,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 33,
+      "overdue_days": 34,
       "no_deadline": false,
       "title": "Продвижение франшиз -Оффер и презентация франшизы",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121774/"
@@ -4620,7 +4625,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 33,
+      "overdue_days": 34,
       "no_deadline": false,
       "title": "Продвижение франшиз-Каналы привлечения франчайзи",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121776/"
@@ -4635,7 +4640,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 29,
+      "overdue_days": 30,
       "no_deadline": false,
       "title": "Продвижение франшиз-Воронка лидов",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121778/"
@@ -4650,7 +4655,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 29,
+      "overdue_days": 30,
       "no_deadline": false,
       "title": "Продвижение франшиз-Маркетинг-кит для точек",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121780/"
@@ -4665,7 +4670,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 29,
+      "overdue_days": 30,
       "no_deadline": false,
       "title": "Продвижение франшиз Стандарты продвижения ФТ",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121782/"
@@ -4680,7 +4685,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 36,
+      "overdue_days": 37,
       "no_deadline": false,
       "title": "Геймификация- план продвижения",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121790/"
@@ -4695,7 +4700,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 65,
+      "overdue_days": 66,
       "no_deadline": false,
       "title": "Геймификация- коммуникации и триггеры",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121794/"
@@ -4710,7 +4715,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 36,
+      "overdue_days": 37,
       "no_deadline": false,
       "title": "Вход геймификации в классы и группы детей-Повысить значимость геймификации на групповом уровне",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121796/"
@@ -4725,7 +4730,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 51,
+      "overdue_days": 52,
       "no_deadline": false,
       "title": "Пересборка продуктовой матрицы-Анализ рентабельности",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121804/"
@@ -4740,7 +4745,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 51,
+      "overdue_days": 52,
       "no_deadline": false,
       "title": "Пересборка продуктовой матрицы-Пересборка матрицы",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121806/"
@@ -4755,7 +4760,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 51,
+      "overdue_days": 52,
       "no_deadline": false,
       "title": "Пересборка продуктовой матрицы-CJM по матрице",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121812/"
@@ -4770,7 +4775,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 36,
+      "overdue_days": 37,
       "no_deadline": false,
       "title": "Пересборка продуктовой матрицы-Плановые показатели по продуктам",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121818/"
@@ -4785,7 +4790,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 36,
+      "overdue_days": 37,
       "no_deadline": false,
       "title": "Пересборка продуктовой матрицы-Переупаковка доп/услуг",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121822/"
@@ -4800,7 +4805,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 58,
+      "overdue_days": 59,
       "no_deadline": false,
       "title": "Пересборка продуктовой матрицы-Категорийный менеджмент меню",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121828/"
@@ -4815,7 +4820,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 36,
+      "overdue_days": 37,
       "no_deadline": false,
       "title": "Пересборка продуктовой матрицы-Продукт Дня Рождения-Улучшить наш корп продукт ДР",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121832/"
@@ -4830,7 +4835,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 36,
+      "overdue_days": 37,
       "no_deadline": false,
       "title": "Пересборка продуктовой матрицы-новые пакеты Дней Рождений-Обновить наши пакеты ДР",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121836/"
@@ -4845,7 +4850,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 36,
+      "overdue_days": 37,
       "no_deadline": false,
       "title": "Пересборка продуктовой матрицы-Создать пакеты ДР, каких нет в Казахстане . сделать WOW эффект",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121840/"
@@ -4860,7 +4865,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 65,
+      "overdue_days": 66,
       "no_deadline": false,
       "title": "Работа с аналитикой-Полный аудит аналитики",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121848/"
@@ -4875,7 +4880,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 65,
+      "overdue_days": 66,
       "no_deadline": false,
       "title": "Работа с аналитикой-Ключевые показатели и цели",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121852/"
@@ -4890,7 +4895,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 30,
+      "overdue_days": 31,
       "no_deadline": false,
       "title": "Работа с аналитикой-План триггерных коммуникаций",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121856/"
@@ -4920,7 +4925,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "Работа с аналитикой-реализация плана",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121878/"
@@ -4935,7 +4940,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 23,
+      "overdue_days": 24,
       "no_deadline": false,
       "title": "Работа с аналитикой-Масштабирование",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121880/"
@@ -4950,7 +4955,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 44,
+      "overdue_days": 45,
       "no_deadline": false,
       "title": "Работа с аналитикой -Функция \"многодетная семья\" Имплементировать функционал для снижения фрода",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121886/"
@@ -4965,7 +4970,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 54,
+      "overdue_days": 55,
       "no_deadline": false,
       "title": "Работа с аналитикой-Data-Добавить метрики для аналитики: Engagement метрики, purchase convertion rate, retantion, revenue",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121892/"
@@ -4980,7 +4985,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 20,
+      "overdue_days": 21,
       "no_deadline": false,
       "title": "Работа с аналитикой-Reaserch -NPS, CustDEV, Usability testing",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121902/"
@@ -4995,7 +5000,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 19,
+      "overdue_days": 20,
       "no_deadline": false,
       "title": "Работа с аналитикой-Сформировать и автоматизировать поведенческие отчеты-Как наш гость ведет себя внутри парка, что любит кушать и что чаще покупает",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121908/"
@@ -5010,7 +5015,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 19,
+      "overdue_days": 20,
       "no_deadline": false,
       "title": "Работа с аналитикой -Интеграция данных с мобилки в Power BI-Видеть поведение гостей в МП",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121910/"
@@ -5025,7 +5030,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "Работа с аналитикой -Anti - фрод отчеты-Сформировать больше отчетов для устранения фрода и мошенничества",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121914/"
@@ -5040,7 +5045,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 62,
+      "overdue_days": 63,
       "no_deadline": false,
       "title": "AVA Party-анализ",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121922/"
@@ -5055,7 +5060,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 36,
+      "overdue_days": 37,
       "no_deadline": false,
       "title": "AVA Party- продукт и ценообразование",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121924/"
@@ -5070,7 +5075,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 33,
+      "overdue_days": 34,
       "no_deadline": false,
       "title": "AVA Party-План продвижения",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1121928/"
@@ -5085,7 +5090,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Задачи 3 кв. 2026 года операционный отдел",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/522150/tasks/task/view/1127580/"
@@ -5115,7 +5120,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Внедрить проверку парков на выполнение стандартов по чек-листам в HR-tech",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/522150/tasks/task/view/1127590/"
@@ -5130,7 +5135,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 33,
+      "overdue_days": 34,
       "no_deadline": false,
       "title": "Запуск нового парка Ташкент, выполнение плановых показателей из утвержденной финансовой модели, подведение итогов план-факт по утвержденным бюджетам открытия и операционного бюджета месяца",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/522150/tasks/task/view/1127600/"
@@ -5145,7 +5150,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 54,
+      "overdue_days": 55,
       "no_deadline": false,
       "title": "Внедрить положение по управлению совещаниями и поручениями",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/522150/tasks/task/view/1127602/"
@@ -5160,7 +5165,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 22,
+      "overdue_days": 23,
       "no_deadline": false,
       "title": "Подготовить все парки к отопительному сезону 2027",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/522150/tasks/task/view/1127606/"
@@ -5190,7 +5195,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Выполнение плана продаж по ДР на 100% (за  3 квартал)",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/111578/tasks/task/view/1128620/"
@@ -5220,7 +5225,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "B2B - 20 000 установок приложения Аватария через Партнерство B2B",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/111578/tasks/task/view/1128630/"
@@ -5235,7 +5240,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "B2C - Продажа Тортов - 20% от кол-ва ДР",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/111578/tasks/task/view/1128632/"
@@ -5250,7 +5255,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Организация и проведение HR бизнес завтрака в RW Alm в Сентябре",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/111578/tasks/task/view/1128646/"
@@ -5265,7 +5270,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "LinkedIn - 500 подписчиков",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/111578/tasks/task/view/1128648/"
@@ -5280,7 +5285,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "Заключить парнерство с компанией Ernst & Young",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/111578/tasks/task/view/1128650/"
@@ -5295,7 +5300,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Островок Аватария в топ ТЦ (Мега) - продажи продуктов Аватария + продвижение Бренда",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/111578/tasks/task/view/1128652/"
@@ -5310,7 +5315,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 51,
+      "overdue_days": 52,
       "no_deadline": false,
       "title": "Разработка регламентов Ташкент ВТР, командирование, коллективный договор,Утвердить лимиты на командировочные расходы в г.Ташкент для персонала Узбекистан",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/207120/tasks/task/view/1128680/"
@@ -5340,7 +5345,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "Аудит обучающих материалов Парка, соответствие обновленных стандартов ОД",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/207120/tasks/task/view/1128698/"
@@ -5370,7 +5375,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "Оценка Gallup топ менеджеры",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/207120/tasks/task/view/1128708/"
@@ -5385,7 +5390,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Продолжение ТЗ и разработки AVA Tech по 2 этапу.",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/207120/tasks/task/view/1128714/"
@@ -5400,7 +5405,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Разработка агента тренера",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/207120/tasks/task/view/1128716/"
@@ -5415,7 +5420,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Переход к цифровому контролю процессов через Avatariya HR по чек листам",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/207120/tasks/task/view/1128718/"
@@ -5535,7 +5540,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Задачи 3 квартал 2026 HR",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/207120/tasks/task/view/1129446/"
@@ -5610,7 +5615,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 40,
+      "overdue_days": 41,
       "no_deadline": false,
       "title": "Ввести запрет на покупку браслета сопровождающего без детей, если ребенка нет, то продается браслет в Extrim",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/522150/tasks/task/view/1130502/"
@@ -5625,7 +5630,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Задачи 3 квартал (Жемилев А.)",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/111578/tasks/task/view/1130548/"
@@ -5715,7 +5720,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Запуск нового восточного поздравления в Ташкенте",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/207600/tasks/task/view/1131794/"
@@ -6030,7 +6035,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Задачи 3 квартал УРБ",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/169108/tasks/task/view/1132038/"
@@ -6045,7 +6050,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Задачи 3 квартала - отдел развития",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/25944/tasks/task/view/1132236/"
@@ -6060,7 +6065,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 20,
+      "overdue_days": 21,
       "no_deadline": false,
       "title": "Напоминаем вам, что необходимо сдать физический договор юристу.",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/408128/tasks/task/view/1133204/"
@@ -6075,7 +6080,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Автоматизировать с Айти отделом автоматизировать процесс начисления ретро бонусов в айко",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/22416/tasks/task/view/1136094/"
@@ -6135,7 +6140,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 12,
+      "overdue_days": 13,
       "no_deadline": false,
       "title": "Баланс по состоянию на 30.06.2026 с расшифровками",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/22416/tasks/task/view/1136120/"
@@ -6150,7 +6155,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "PD. Задачи 3 квартал",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1138426/"
@@ -6165,7 +6170,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Ava Party. Спроектировать и утвердить аттракционы",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1138428/"
@@ -6180,7 +6185,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Ava Party. Создать планировку помещения",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1138468/"
@@ -6195,7 +6200,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Ava Party. Создать и утвердить 3D",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1138472/"
@@ -6210,7 +6215,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 43,
+      "overdue_days": 44,
       "no_deadline": false,
       "title": "Ava Party. Утвердить игровую механику",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1138478/"
@@ -6225,7 +6230,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 43,
+      "overdue_days": 44,
       "no_deadline": false,
       "title": "Ava Party. Подготовить ТЗ для разработки Геймификации",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1138486/"
@@ -6240,7 +6245,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Ava Party. Найти новые решения, поставщиков по материалам, декорациям, подсветкам в Китае",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1138498/"
@@ -6255,7 +6260,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Ava Party. Выдать АИ и комплектацию",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1138514/"
@@ -6270,7 +6275,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Проектирование новых парков - MAXIMA",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1138522/"
@@ -6285,7 +6290,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Реконструкция RW Karaganda. Заказать, доставить и протестировать все обновления в парке, запустить Геймификацию.",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1138542/"
@@ -6300,7 +6305,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Реконструкция IW Taraz. Подготовить проекты, утвердить с франчайзи, заказать, доставить все утвержденные изменения.",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1138552/"
@@ -6315,7 +6320,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Внедрить Геймификацию в RW Karaganda с добавлением зоны Activate",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1138664/"
@@ -6345,7 +6350,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Открытие парка RW Tashkent. Подготовить механики, протестировать и передать опер.отделу все новинки в парке.",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1138694/"
@@ -6405,7 +6410,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 19,
+      "overdue_days": 20,
       "no_deadline": false,
       "title": "Устранить ошибки обмена номенклатуры БУ с Розницей: Код упаковки -должен ходить в обмене в обе стороны, НДС не ходит, тип вида номенклатуры не проставляется в рознице при обмене из БУ",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/148974/tasks/task/view/1151314/"
@@ -6435,7 +6440,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 66,
+      "overdue_days": 67,
       "no_deadline": false,
       "title": "Напоминаем вам, что необходимо сдать физический договор юристу.",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/380006/tasks/task/view/1151390/"
@@ -6450,7 +6455,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 66,
+      "overdue_days": 67,
       "no_deadline": false,
       "title": "Напоминаем вам, что необходимо сдать физический договор юристу.",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/8726/tasks/task/view/1151624/"
@@ -6645,7 +6650,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Проверка заполненности ИКПУ, и упаковки на палитры товаров РМК",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/148974/tasks/task/view/1171222/"
@@ -6660,7 +6665,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "AvaTracker функционал в HRTech",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/325612/tasks/task/view/1171408/"
@@ -6675,7 +6680,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Доработка аналитики",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/325612/tasks/task/view/1171420/"
@@ -6690,7 +6695,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "База знаний по ИИ",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/325612/tasks/task/view/1171424/"
@@ -6735,7 +6740,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 19,
+      "overdue_days": 20,
       "no_deadline": false,
       "title": "Изменение регистрации по коду без пароля",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/325612/tasks/task/view/1171450/"
@@ -6750,7 +6755,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 5,
+      "overdue_days": 6,
       "no_deadline": false,
       "title": "Регистрация через Ватсап для КЗ, в окне ввода кода , добавить отправить через СМС после таймера",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/325612/tasks/task/view/1171454/"
@@ -6765,7 +6770,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 5,
+      "overdue_days": 6,
       "no_deadline": false,
       "title": "Передать инструмент отправки пушей маркетнигу",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/325612/tasks/task/view/1171492/"
@@ -6975,7 +6980,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Блокировку в палитре товаров если нет ИКПУ, и кода упаковки номенклатуре",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/148974/tasks/task/view/1172814/"
@@ -7305,7 +7310,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "В backend Мобильной кассы добавить сопоставления билетов и браслетов, роль Оператора, учет списания браслетов (15/08)",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/393924/tasks/task/view/1176252/"
@@ -7785,7 +7790,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "Напоминаем вам, что необходимо сдать физический договор юристу.",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/380006/tasks/task/view/1195608/"
@@ -7800,7 +7805,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "Напоминаем вам, что необходимо сдать физический договор юристу.",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/380006/tasks/task/view/1195630/"
@@ -7815,7 +7820,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "Напоминаем вам, что необходимо сдать физический договор юристу.",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/380006/tasks/task/view/1195672/"
@@ -7830,7 +7835,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 37,
+      "overdue_days": 38,
       "no_deadline": false,
       "title": "Напоминаем вам, что необходимо сдать физический договор юристу.",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/380006/tasks/task/view/1195680/"
@@ -7845,7 +7850,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 19,
+      "overdue_days": 20,
       "no_deadline": false,
       "title": "Интеграция данных по оплатам вендинга с Big Data и 1С",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/393924/tasks/task/view/1195780/"
@@ -7920,7 +7925,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 35,
+      "overdue_days": 36,
       "no_deadline": false,
       "title": "Отчет: Закуп резервного оборудования (план, в остатке, что куплено за месяц)",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/18/tasks/task/view/1205220/"
@@ -8055,7 +8060,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 29,
+      "overdue_days": 30,
       "no_deadline": false,
       "title": "Закуп Тест 2",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/103944/tasks/task/view/1209900/"
@@ -8085,7 +8090,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 28,
+      "overdue_days": 29,
       "no_deadline": false,
       "title": "Напоминаем вам, что необходимо сдать физический договор юристу.",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/615632/tasks/task/view/1211412/"
@@ -8100,7 +8105,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 28,
+      "overdue_days": 29,
       "no_deadline": false,
       "title": "Напоминаем вам, что необходимо сдать физический договор юристу.",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/615632/tasks/task/view/1211414/"
@@ -8430,7 +8435,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 26,
+      "overdue_days": 27,
       "no_deadline": false,
       "title": "произвести доработку автоматизации списания носков браслетов в 1с, при покупке с мобилки, сайта, КСО.",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/148974/tasks/task/view/1211710/"
@@ -8475,7 +8480,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 27,
+      "overdue_days": 28,
       "no_deadline": false,
       "title": "Закуп Тест 3",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/103944/tasks/task/view/1213432/"
@@ -8505,7 +8510,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 26,
+      "overdue_days": 27,
       "no_deadline": false,
       "title": "Обновить обработку загрузки чеков в Тараз, чтобы чеки попадали только Тараза",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/18/tasks/task/view/1216494/"
@@ -8535,7 +8540,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 19,
+      "overdue_days": 20,
       "no_deadline": false,
       "title": "Ташкент/Казахстан - При отправке браслетов, ранее отправлять гостя и детей (1 час)",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/148974/tasks/task/view/1216508/"
@@ -8565,7 +8570,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 19,
+      "overdue_days": 20,
       "no_deadline": false,
       "title": "⁠Казахстан - сломались скан QR билетов мобилки (1 час)",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/148974/tasks/task/view/1216512/"
@@ -8580,7 +8585,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 19,
+      "overdue_days": 20,
       "no_deadline": false,
       "title": "Казахстан/Ташкент - чеки не прилетают в базу из бигдаты мобилки/вендинг и тд (1 час)",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/148974/tasks/task/view/1216518/"
@@ -8640,7 +8645,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 19,
+      "overdue_days": 20,
       "no_deadline": false,
       "title": "Пуш уведомления в мобилку в КЗ о начислении бонусов, также как и в Ташкенте ( 1 час)",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/148974/tasks/task/view/1216546/"
@@ -8655,7 +8660,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 19,
+      "overdue_days": 20,
       "no_deadline": false,
       "title": "Такшкент/Казахстан статус промокода, при списании отправлять по апи в БигДату",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/148974/tasks/task/view/1216566/"
@@ -8670,7 +8675,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 25,
+      "overdue_days": 26,
       "no_deadline": false,
       "title": "Закуп Тест",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/103944/tasks/task/view/1216952/"
@@ -8685,7 +8690,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 24,
+      "overdue_days": 25,
       "no_deadline": false,
       "title": "Закуп Наименование: Закуп нового шоу/игры – изготовление реквизита",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/66050/tasks/task/view/1217946/"
@@ -8730,7 +8735,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 5,
+      "overdue_days": 6,
       "no_deadline": false,
       "title": "Проверить отсутствие исходного фото по отдельным событиям: определить причину отсутствия фотографии, по которой система выполняет сопоставление человека.",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/381580/tasks/task/view/1218228/"
@@ -8760,7 +8765,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 5,
+      "overdue_days": 6,
       "no_deadline": false,
       "title": "Проверить причину формирования 101 события по одному гостю.",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/381580/tasks/task/view/1218232/"
@@ -8775,7 +8780,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 28,
+      "overdue_days": 29,
       "no_deadline": false,
       "title": "Перепроверить корректность фиксации сотрудников системой.",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/52/tasks/task/view/1218234/"
@@ -8955,7 +8960,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 19,
+      "overdue_days": 20,
       "no_deadline": false,
       "title": "Разработка Backend Медиа/Фото",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/52/tasks/task/view/1218266/"
@@ -8985,7 +8990,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 12,
+      "overdue_days": 13,
       "no_deadline": false,
       "title": "Разработка Frontend Медиа/Фото",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/565358/tasks/task/view/1218272/"
@@ -9165,7 +9170,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 19,
+      "overdue_days": 20,
       "no_deadline": false,
       "title": "Внешние цены документ отправляет в бигдату все даннве по документам а не определенный который проводишь, нужно дать ссылку на документ в отправку",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/148974/tasks/task/view/1220096/"
@@ -9195,7 +9200,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 19,
+      "overdue_days": 20,
       "no_deadline": false,
       "title": "NPS по ДР",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/418462/tasks/task/view/1220126/"
@@ -9210,7 +9215,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 26,
+      "overdue_days": 27,
       "no_deadline": false,
       "title": "Игрушки: Получить корректный договор от поставщика. Согласовать договор и получить QR-коды.",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/408128/tasks/task/view/1220204/"
@@ -9225,7 +9230,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 23,
+      "overdue_days": 24,
       "no_deadline": false,
       "title": "Игрушки: Проверить и установить QR-коды на вендинг",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/408128/tasks/task/view/1220206/"
@@ -9270,7 +9275,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 19,
+      "overdue_days": 20,
       "no_deadline": false,
       "title": "Игрушки: Проверить поступление оплаты в кассу 1С",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/18/tasks/task/view/1220212/"
@@ -9285,7 +9290,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 19,
+      "overdue_days": 20,
       "no_deadline": false,
       "title": "Снек 1: Подключить Payme",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/393924/tasks/task/view/1220218/"
@@ -9315,7 +9320,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 26,
+      "overdue_days": 27,
       "no_deadline": false,
       "title": "Снек 2: восстановить работу SIM-карты",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/634348/tasks/task/view/1220224/"
@@ -9330,7 +9335,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 26,
+      "overdue_days": 27,
       "no_deadline": false,
       "title": "Снек 3 — устранить проблему с приложением/экраном",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/634348/tasks/task/view/1220226/"
@@ -9345,7 +9350,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 19,
+      "overdue_days": 20,
       "no_deadline": false,
       "title": "Снек: Настроить передачу платежей снековых вендингов в BigData",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/393924/tasks/task/view/1220228/"
@@ -9360,7 +9365,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 16,
+      "overdue_days": 17,
       "no_deadline": false,
       "title": "Гиг: Определить ассортимент и цены",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/548094/tasks/task/view/1220232/"
@@ -9375,7 +9380,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 19,
+      "overdue_days": 20,
       "no_deadline": false,
       "title": "Проверить ошибочные сценарии",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/381580/tasks/task/view/1220234/"
@@ -9795,7 +9800,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 19,
+      "overdue_days": 20,
       "no_deadline": false,
       "title": "Пуш текст о начислении бонусов из Айко и 1С",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/325612/tasks/task/view/1221690/"
@@ -9810,7 +9815,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Активация промокода на кассе в 1С с мобилки QR кода (чреез сканер)",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/148974/tasks/task/view/1221696/"
@@ -9855,7 +9860,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 5,
+      "overdue_days": 6,
       "no_deadline": false,
       "title": "Тригерный пуши автоматизация",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/325612/tasks/task/view/1221802/"
@@ -9885,7 +9890,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 26,
+      "overdue_days": 27,
       "no_deadline": false,
       "title": "добавить функционал добавления ребенка при перегистрации браслета",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/325612/tasks/task/view/1221814/"
@@ -9900,7 +9905,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 12,
+      "overdue_days": 13,
       "no_deadline": false,
       "title": "Составить план по доработкам",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/325612/tasks/task/view/1221822/"
@@ -9915,7 +9920,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 19,
+      "overdue_days": 20,
       "no_deadline": false,
       "title": "Опубликовать в App Store приложение",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/325612/tasks/task/view/1221858/"
@@ -9924,12 +9929,12 @@
       "dept": "Отдел закупок",
       "employee": "Севидова Марина",
       "created": "2026-09-10",
-      "closed": "2026-10-05",
+      "closed": "2026-10-08",
       "deadline": "2026-09-15",
-      "done": false,
+      "done": true,
       "in_progress": false,
-      "overdue_now": true,
-      "closed_overdue": false,
+      "overdue_now": false,
+      "closed_overdue": true,
       "overdue_days": 22,
       "no_deadline": false,
       "title": "Закуп Бактерицидная лампа",
@@ -9960,7 +9965,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Составить ТЗ ПО IT",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/614650/tasks/task/view/1222880/"
@@ -9990,7 +9995,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 12,
+      "overdue_days": 13,
       "no_deadline": false,
       "title": "Итоги инвентаризации ОС в Ташкенте",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/22416/tasks/task/view/1227608/"
@@ -10020,7 +10025,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 19,
+      "overdue_days": 20,
       "no_deadline": false,
       "title": "Доработки Мониторинга IT",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/614650/tasks/task/view/1227644/"
@@ -10035,7 +10040,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 22,
+      "overdue_days": 23,
       "no_deadline": false,
       "title": "AvaTracker доработать инструмент так чтобы могли самостоятельно решать вопросы юзеры",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/52/tasks/task/view/1227672/"
@@ -11040,7 +11045,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Запуск QR в Ташкенте",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/18/tasks/task/view/1228014/"
@@ -11070,7 +11075,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 12,
+      "overdue_days": 13,
       "no_deadline": false,
       "title": "Закуп 1 шт принтера LAN, 2 модуля сети, браслеты трех цветов Синий, зеленый, желтый",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/18/tasks/task/view/1228018/"
@@ -11085,7 +11090,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Установка принтеров браслетов КСО Ташкент",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/18/tasks/task/view/1228020/"
@@ -11130,7 +11135,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 7,
+      "overdue_days": 8,
       "no_deadline": false,
       "title": "Перерегистрировать новый адрес в ГО в налоговой и юстиции",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/22416/tasks/task/view/1230530/"
@@ -11145,7 +11150,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 9,
+      "overdue_days": 10,
       "no_deadline": false,
       "title": "Предоставить отчет по подочету по Ташкенту по сотрудникам ГО",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/22416/tasks/task/view/1230532/"
@@ -11402,7 +11407,7 @@
       "closed_overdue": true,
       "overdue_days": 0,
       "no_deadline": false,
-      "title": "План Го на октябрь м-ц",
+      "title": "Отчет по свод расходов парков за август м-ц",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/62254/tasks/task/view/1231742/"
     },
     {
@@ -12660,7 +12665,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 83,
+      "overdue_days": 84,
       "no_deadline": false,
       "title": "Внедрить ИИ-аналитику и предиктивные модели на камеры видеонаблюдения — выявление падений, скоплений, нештатных ситуаций, пожароопасных признаков и прогнозирование рисков по зонам и времени (в процессе).",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/169108/tasks/task/view/904744/"
@@ -13575,7 +13580,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 108,
+      "overdue_days": 109,
       "no_deadline": false,
       "title": "Напоминаем вам, что необходимо сдать физический договор юристу.",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/8726/tasks/task/view/1088112/"
@@ -13590,7 +13595,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 95,
+      "overdue_days": 96,
       "no_deadline": false,
       "title": "Напоминаем вам, что необходимо сдать физический договор юристу.",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/8726/tasks/task/view/1106114/"
@@ -13605,7 +13610,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 80,
+      "overdue_days": 81,
       "no_deadline": false,
       "title": "Напоминаем вам, что необходимо сдать физический договор юристу.",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/8726/tasks/task/view/1130320/"
@@ -13710,7 +13715,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 20,
+      "overdue_days": 21,
       "no_deadline": false,
       "title": "Дашборд аналитики по задачам",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/381580/tasks/task/view/1233962/"
@@ -13734,10 +13739,10 @@
       "dept": "Проектный IT",
       "employee": "Куатулы Абуханифа",
       "created": "2026-09-18",
-      "closed": null,
+      "closed": "2026-10-08",
       "deadline": "2026-10-09",
-      "done": false,
-      "in_progress": true,
+      "done": true,
+      "in_progress": false,
       "overdue_now": false,
       "closed_overdue": false,
       "overdue_days": 0,
@@ -13800,7 +13805,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 12,
+      "overdue_days": 13,
       "no_deadline": false,
       "title": "Создание новых API для всего флоу",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/393920/tasks/task/view/1235378/"
@@ -13815,7 +13820,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 14,
+      "overdue_days": 15,
       "no_deadline": false,
       "title": "Закуп тест тест",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/103944/tasks/task/view/1235418/"
@@ -13875,7 +13880,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 14,
+      "overdue_days": 15,
       "no_deadline": false,
       "title": "Напоминаем вам, что необходимо сдать физический договор юристу.",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/8726/tasks/task/view/1235602/"
@@ -14040,7 +14045,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 0,
+      "overdue_days": 1,
       "no_deadline": false,
       "title": "Ташкент: перенести отчеты",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/634348/tasks/task/view/1241192/"
@@ -15360,7 +15365,7 @@
       "in_progress": false,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 12,
+      "overdue_days": 13,
       "no_deadline": false,
       "title": "Итоговый отчет по 3310 по состоянию на 31.08.2026 с комментариями и дату образования долга",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/22416/tasks/task/view/1244162/"
@@ -15478,7 +15483,7 @@
       "deadline": "2026-10-08",
       "done": false,
       "in_progress": true,
-      "overdue_now": false,
+      "overdue_now": true,
       "closed_overdue": false,
       "overdue_days": 0,
       "no_deadline": false,
@@ -15493,7 +15498,7 @@
       "deadline": "2026-10-08",
       "done": false,
       "in_progress": true,
-      "overdue_now": false,
+      "overdue_now": true,
       "closed_overdue": false,
       "overdue_days": 0,
       "no_deadline": false,
@@ -15505,12 +15510,12 @@
       "employee": "Мирадил Гулдана Асхаткызы",
       "created": "2026-09-24",
       "closed": null,
-      "deadline": "2026-10-05",
+      "deadline": "2026-10-09",
       "done": false,
       "in_progress": true,
-      "overdue_now": true,
+      "overdue_now": false,
       "closed_overdue": false,
-      "overdue_days": 2,
+      "overdue_days": 0,
       "no_deadline": false,
       "title": "План-факт по открытиям и реконструкциям за сентябрь  м-ц",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/197464/tasks/task/view/1244186/"
@@ -15519,12 +15524,12 @@
       "dept": "Финансовый отдел",
       "employee": "Мирадил Гулдана Асхаткызы",
       "created": "2026-09-24",
-      "closed": "2026-09-28",
+      "closed": "2026-10-08",
       "deadline": "2026-09-29",
-      "done": false,
+      "done": true,
       "in_progress": false,
-      "overdue_now": true,
-      "closed_overdue": false,
+      "overdue_now": false,
+      "closed_overdue": true,
       "overdue_days": 8,
       "no_deadline": false,
       "title": "ФМ на октябрь м-ц",
@@ -15535,12 +15540,12 @@
       "employee": "Мирадил Гулдана Асхаткызы",
       "created": "2026-09-24",
       "closed": null,
-      "deadline": "2026-10-02",
+      "deadline": "2026-10-09",
       "done": false,
-      "in_progress": false,
-      "overdue_now": true,
+      "in_progress": true,
+      "overdue_now": false,
       "closed_overdue": false,
-      "overdue_days": 5,
+      "overdue_days": 0,
       "no_deadline": false,
       "title": "Сверить остатки ДС по состоянию на 30.09.2026 по остаткам выписки банка и инвентаризация кассы",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/197464/tasks/task/view/1244192/"
@@ -15580,7 +15585,7 @@
       "employee": "Мирадил Гулдана Асхаткызы",
       "created": "2026-09-24",
       "closed": null,
-      "deadline": "2026-10-08",
+      "deadline": "2026-10-12",
       "done": false,
       "in_progress": true,
       "overdue_now": false,
@@ -15624,12 +15629,12 @@
       "dept": "Финансовый отдел",
       "employee": "Мирадил Гулдана Асхаткызы",
       "created": "2026-09-24",
-      "closed": "2026-09-30",
+      "closed": "2026-10-08",
       "deadline": "2026-10-01",
-      "done": false,
+      "done": true,
       "in_progress": false,
-      "overdue_now": true,
-      "closed_overdue": false,
+      "overdue_now": false,
+      "closed_overdue": true,
       "overdue_days": 6,
       "no_deadline": false,
       "title": "Отчет по списанию малоценки за сентябрь м-ц",
@@ -15639,12 +15644,12 @@
       "dept": "Финансовый отдел",
       "employee": "Мирадил Гулдана Асхаткызы",
       "created": "2026-09-24",
-      "closed": "2026-10-02",
+      "closed": "2026-10-08",
       "deadline": "2026-09-30",
-      "done": false,
+      "done": true,
       "in_progress": false,
-      "overdue_now": true,
-      "closed_overdue": false,
+      "overdue_now": false,
+      "closed_overdue": true,
       "overdue_days": 7,
       "no_deadline": false,
       "title": "План Го на октябрь  м-ц",
@@ -15669,12 +15674,12 @@
       "dept": "Финансовый отдел",
       "employee": "Мирадил Гулдана Асхаткызы",
       "created": "2026-09-24",
-      "closed": "2026-09-28",
+      "closed": "2026-10-08",
       "deadline": "2026-09-29",
-      "done": false,
+      "done": true,
       "in_progress": false,
-      "overdue_now": true,
-      "closed_overdue": false,
+      "overdue_now": false,
+      "closed_overdue": true,
       "overdue_days": 8,
       "no_deadline": false,
       "title": "Отчет по поступлении и инвестиции денег за август м-ц",
@@ -15699,12 +15704,12 @@
       "dept": "Финансовый отдел",
       "employee": "Мирадил Гулдана Асхаткызы",
       "created": "2026-09-24",
-      "closed": "2026-09-30",
+      "closed": "2026-10-08",
       "deadline": "2026-09-30",
-      "done": false,
+      "done": true,
       "in_progress": false,
-      "overdue_now": true,
-      "closed_overdue": false,
+      "overdue_now": false,
+      "closed_overdue": true,
       "overdue_days": 7,
       "no_deadline": false,
       "title": "План Факт по маркетингу за август м-ц",
@@ -15729,12 +15734,12 @@
       "dept": "Финансовый отдел",
       "employee": "Мирадил Гулдана Асхаткызы",
       "created": "2026-09-24",
-      "closed": "2026-09-28",
+      "closed": "2026-10-08",
       "deadline": "2026-09-29",
-      "done": false,
+      "done": true,
       "in_progress": false,
-      "overdue_now": true,
-      "closed_overdue": false,
+      "overdue_now": false,
+      "closed_overdue": true,
       "overdue_days": 8,
       "no_deadline": false,
       "title": "План Факт по ивент за август м-ц",
@@ -15759,10 +15764,10 @@
       "dept": "Финансовый отдел",
       "employee": "Абдуллаева Маржан Омаровна",
       "created": "2026-09-24",
-      "closed": null,
+      "closed": "2026-10-08",
       "deadline": "2026-10-09",
-      "done": false,
-      "in_progress": true,
+      "done": true,
+      "in_progress": false,
       "overdue_now": false,
       "closed_overdue": false,
       "overdue_days": 0,
@@ -15774,10 +15779,10 @@
       "dept": "Финансовый отдел",
       "employee": "Абдуллаева Маржан Омаровна",
       "created": "2026-09-24",
-      "closed": null,
+      "closed": "2026-10-08",
       "deadline": "2026-10-15",
-      "done": false,
-      "in_progress": true,
+      "done": true,
+      "in_progress": false,
       "overdue_now": false,
       "closed_overdue": false,
       "overdue_days": 0,
@@ -15894,10 +15899,10 @@
       "dept": "Финансовый отдел",
       "employee": "Абдуллаева Маржан Омаровна",
       "created": "2026-09-24",
-      "closed": null,
+      "closed": "2026-10-08",
       "deadline": "2026-10-30",
-      "done": false,
-      "in_progress": true,
+      "done": true,
+      "in_progress": false,
       "overdue_now": false,
       "closed_overdue": false,
       "overdue_days": 0,
@@ -16695,7 +16700,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 2,
+      "overdue_days": 3,
       "no_deadline": false,
       "title": "[Формат парка] Доставка грузов для реконструкции Тараза",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/138590/tasks/task/view/1246452/"
@@ -16890,7 +16895,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 5,
+      "overdue_days": 6,
       "no_deadline": false,
       "title": "Обсуждение выбора подарков и чёткий план по внедрению",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/601138/tasks/task/view/1246484/"
@@ -16905,7 +16910,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 5,
+      "overdue_days": 6,
       "no_deadline": false,
       "title": "Обсуждение стратегии продвижения по всем паркам",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/601138/tasks/task/view/1246486/"
@@ -16920,7 +16925,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 5,
+      "overdue_days": 6,
       "no_deadline": false,
       "title": "Внедрение Экстра и Челленджей",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/601138/tasks/task/view/1246488/"
@@ -16935,7 +16940,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 5,
+      "overdue_days": 6,
       "no_deadline": false,
       "title": "Финализация сканнеров - выбора",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/601138/tasks/task/view/1246490/"
@@ -16950,7 +16955,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 5,
+      "overdue_days": 6,
       "no_deadline": false,
       "title": "Подготовка материалов для ежемесячного мониторинга и аттестации сотрудников",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/601138/tasks/task/view/1246492/"
@@ -16965,7 +16970,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 5,
+      "overdue_days": 6,
       "no_deadline": false,
       "title": "Передача дел",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/601138/tasks/task/view/1246494/"
@@ -16980,7 +16985,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 5,
+      "overdue_days": 6,
       "no_deadline": false,
       "title": "RW Almaty - WebView - корректировка после комментариев",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/601138/tasks/task/view/1246496/"
@@ -16995,7 +17000,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 5,
+      "overdue_days": 6,
       "no_deadline": false,
       "title": "Челленджи - исправить все недочёты",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/601138/tasks/task/view/1246498/"
@@ -17010,7 +17015,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 5,
+      "overdue_days": 6,
       "no_deadline": false,
       "title": "Статистика - посмотреть MVP",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/601138/tasks/task/view/1246500/"
@@ -17025,7 +17030,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 5,
+      "overdue_days": 6,
       "no_deadline": false,
       "title": "Моб касса - внедрение фитчи по сканированию взр.браслета",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/601138/tasks/task/view/1246502/"
@@ -17047,33 +17052,33 @@
     },
     {
       "dept": "Отдел маркетинга",
-      "employee": "Асанов Бауыржан",
+      "employee": "Мауленовa Аружан",
       "created": "2026-09-25",
-      "closed": "2026-10-02",
-      "deadline": "2026-09-28",
+      "closed": "2026-10-08",
+      "deadline": "2026-10-08",
       "done": true,
       "in_progress": false,
       "overdue_now": false,
-      "closed_overdue": true,
-      "overdue_days": 3,
+      "closed_overdue": false,
+      "overdue_days": 0,
       "no_deadline": false,
       "title": "СhocoLife (новая механика). дедлайн: 28 сентября",
-      "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1246622/"
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/446550/tasks/task/view/1246622/"
     },
     {
       "dept": "Отдел маркетинга",
-      "employee": "Асанов Бауыржан",
+      "employee": "Мауленовa Аружан",
       "created": "2026-09-25",
-      "closed": "2026-10-01",
-      "deadline": "2026-09-28",
+      "closed": "2026-10-08",
+      "deadline": "2026-10-08",
       "done": true,
       "in_progress": false,
       "overdue_now": false,
-      "closed_overdue": true,
-      "overdue_days": 2,
+      "closed_overdue": false,
+      "overdue_days": 0,
       "no_deadline": false,
       "title": "SaveMAX (новая механика). Дедлайн: 28 сентября",
-      "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1246624/"
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/446550/tasks/task/view/1246624/"
     },
     {
       "dept": "Отдел маркетинга",
@@ -17107,7 +17112,7 @@
     },
     {
       "dept": "Отдел маркетинга",
-      "employee": "Асанов Бауыржан",
+      "employee": "Мауленовa Аружан",
       "created": "2026-09-25",
       "closed": null,
       "deadline": "2026-10-15",
@@ -17118,11 +17123,11 @@
       "overdue_days": 0,
       "no_deadline": false,
       "title": "Антиконкурентный план: Конкурентный анализ, план удержания и отстройки от новых конкурентов. Дедлайн: 15 октября",
-      "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1246630/"
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/446550/tasks/task/view/1246630/"
     },
     {
       "dept": "Отдел маркетинга",
-      "employee": "Асанов Бауыржан",
+      "employee": "Мауленовa Аружан",
       "created": "2026-09-25",
       "closed": null,
       "deadline": "2026-10-15",
@@ -17133,7 +17138,7 @@
       "overdue_days": 0,
       "no_deadline": false,
       "title": "Кастдев: Организовать обзвон ушедших клиентов для выявления причин невозврата. Дедлайн: 15 октября",
-      "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1246632/"
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/446550/tasks/task/view/1246632/"
     },
     {
       "dept": "Отдел маркетинга",
@@ -17167,18 +17172,18 @@
     },
     {
       "dept": "Отдел маркетинга",
-      "employee": "Асанов Бауыржан",
+      "employee": "Мауленовa Аружан",
       "created": "2026-09-25",
       "closed": null,
-      "deadline": "2026-11-06",
+      "deadline": "2026-12-01",
       "done": false,
       "in_progress": true,
       "overdue_now": false,
       "closed_overdue": false,
       "overdue_days": 0,
       "no_deadline": false,
-      "title": "Позиционирование (KIDS/ Extreme). Дедлайн: 6 ноября",
-      "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1246638/"
+      "title": "Позиционирование (KIDS/ Extreme). Дедлайн: 1 декабря",
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/446550/tasks/task/view/1246638/"
     },
     {
       "dept": "Отдел маркетинга",
@@ -17197,7 +17202,7 @@
     },
     {
       "dept": "Отдел маркетинга",
-      "employee": "Асанов Бауыржан",
+      "employee": "Мауленовa Аружан",
       "created": "2026-09-25",
       "closed": null,
       "deadline": "2026-11-06",
@@ -17208,7 +17213,7 @@
       "overdue_days": 0,
       "no_deadline": false,
       "title": "Аналитика: Внедрить и настроить систему сквозной аналитики для отслеживания пути клиента и окупаемости. Дедлайн: 6 ноября",
-      "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1246642/"
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/446550/tasks/task/view/1246642/"
     },
     {
       "dept": "Отдел маркетинга",
@@ -17227,7 +17232,7 @@
     },
     {
       "dept": "Отдел маркетинга",
-      "employee": "Асанов Бауыржан",
+      "employee": "Мауленовa Аружан",
       "created": "2026-09-25",
       "closed": null,
       "deadline": "2026-11-20",
@@ -17238,7 +17243,7 @@
       "overdue_days": 0,
       "no_deadline": false,
       "title": "Продукты: Сформировать продуктовую матрицу (абонементы, пакеты, например безлимит за 60 000 в мес.). Дедлайн: 15 ноября",
-      "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1246646/"
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/446550/tasks/task/view/1246646/"
     },
     {
       "dept": "Отдел маркетинга",
@@ -17257,7 +17262,7 @@
     },
     {
       "dept": "Отдел маркетинга",
-      "employee": "Асанов Бауыржан",
+      "employee": "Мауленовa Аружан",
       "created": "2026-09-25",
       "closed": null,
       "deadline": "2026-12-31",
@@ -17268,7 +17273,7 @@
       "overdue_days": 0,
       "no_deadline": false,
       "title": "Ретеншн: Реализовать план мероприятий для увеличения коэффициента возвращаемости с базы с 1.21 до 1,5. Дедлайн: 31 декабря (приходим к показателю 1,5%)",
-      "url": "https://avatariya.bitrix24.kz/company/personal/user/624232/tasks/task/view/1246652/"
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/446550/tasks/task/view/1246652/"
     },
     {
       "dept": "Отдел закупок",
@@ -17970,7 +17975,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 210,
+      "overdue_days": 211,
       "no_deadline": false,
       "title": "Браслеты",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/103944/tasks/task/view/930950/"
@@ -17985,7 +17990,7 @@
       "in_progress": true,
       "overdue_now": true,
       "closed_overdue": false,
-      "overdue_days": 5,
+      "overdue_days": 6,
       "no_deadline": false,
       "title": "Отчет: Закуп резервного оборудования (план, в остатке, что куплено за месяц)",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/18/tasks/task/view/1256248/"
@@ -18184,6 +18189,141 @@
       "no_deadline": false,
       "title": "Ташкент: создать видеоинструкции по 1с отчетам",
       "url": "https://avatariya.bitrix24.kz/company/personal/user/634348/tasks/task/view/1265772/"
+    },
+    {
+      "dept": "Финансовый отдел",
+      "employee": "Аралбекова Молдир Амировна",
+      "created": "2026-10-08",
+      "closed": null,
+      "deadline": "2026-10-30",
+      "done": false,
+      "in_progress": true,
+      "overdue_now": false,
+      "closed_overdue": false,
+      "overdue_days": 0,
+      "no_deadline": false,
+      "title": "Закрыть все расчетные счета в парках кроме Народный и Каспий банк",
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/22416/tasks/task/view/1267074/"
+    },
+    {
+      "dept": "Финансовый отдел",
+      "employee": "Мирадил Гулдана Асхаткызы",
+      "created": "2026-10-08",
+      "closed": null,
+      "deadline": "2026-10-12",
+      "done": false,
+      "in_progress": true,
+      "overdue_now": false,
+      "closed_overdue": false,
+      "overdue_days": 0,
+      "no_deadline": false,
+      "title": "Предоставить Молдир  список расчетных счетов к закрытию в разрезе парков",
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/197464/tasks/task/view/1267076/"
+    },
+    {
+      "dept": "Финансовый отдел",
+      "employee": "Мирадил Гулдана Асхаткызы",
+      "created": "2026-10-08",
+      "closed": null,
+      "deadline": "2026-10-13",
+      "done": false,
+      "in_progress": true,
+      "overdue_now": false,
+      "closed_overdue": false,
+      "overdue_days": 0,
+      "no_deadline": false,
+      "title": "Привести наименование парков в базе бух в соответствии утвержденных наименование",
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/197464/tasks/task/view/1267080/"
+    },
+    {
+      "dept": "Финансовый отдел",
+      "employee": "Мирадил Гулдана Асхаткызы",
+      "created": "2026-10-08",
+      "closed": null,
+      "deadline": "2026-10-14",
+      "done": false,
+      "in_progress": true,
+      "overdue_now": false,
+      "closed_overdue": false,
+      "overdue_days": 0,
+      "no_deadline": false,
+      "title": "Привести наименование касс и расчетных счетов с утвержденными правилами",
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/197464/tasks/task/view/1267082/"
+    },
+    {
+      "dept": "Финансовый отдел",
+      "employee": "Мирадил Гулдана Асхаткызы",
+      "created": "2026-10-08",
+      "closed": null,
+      "deadline": "2026-10-30",
+      "done": false,
+      "in_progress": true,
+      "overdue_now": false,
+      "closed_overdue": false,
+      "overdue_days": 0,
+      "no_deadline": false,
+      "title": "Составить БДР по Аватарии с доходом  по Ава тех и без расходов Аватех с января по сентябрь м-ц",
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/197464/tasks/task/view/1267306/"
+    },
+    {
+      "dept": "Финансовый отдел",
+      "employee": "Аралбекова Молдир Амировна",
+      "created": "2026-10-08",
+      "closed": null,
+      "deadline": "2026-10-09",
+      "done": false,
+      "in_progress": true,
+      "overdue_now": false,
+      "closed_overdue": false,
+      "overdue_days": 0,
+      "no_deadline": false,
+      "title": "Создать шаблон баланса для рег бухов парка и отправить им",
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/22416/tasks/task/view/1267312/"
+    },
+    {
+      "dept": "Финансовый отдел",
+      "employee": "Аралбекова Молдир Амировна",
+      "created": "2026-10-08",
+      "closed": null,
+      "deadline": "2026-10-26",
+      "done": false,
+      "in_progress": true,
+      "overdue_now": false,
+      "closed_overdue": false,
+      "overdue_days": 0,
+      "no_deadline": false,
+      "title": "Баланс по паркам на 30.09.2026 с расшифровками",
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/22416/tasks/task/view/1267314/"
+    },
+    {
+      "dept": "Отдел Event",
+      "employee": "Кайгородова Кристина Дмитриевна",
+      "created": "2026-10-08",
+      "closed": null,
+      "deadline": "2026-10-13",
+      "done": false,
+      "in_progress": true,
+      "overdue_now": false,
+      "closed_overdue": false,
+      "overdue_days": 0,
+      "no_deadline": false,
+      "title": "Закуп Многоразовая пиньята",
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/207600/tasks/task/view/1267498/"
+    },
+    {
+      "dept": "Отдел Event",
+      "employee": "Кайгородова Кристина Дмитриевна",
+      "created": "2026-10-08",
+      "closed": null,
+      "deadline": "2026-10-13",
+      "done": false,
+      "in_progress": true,
+      "overdue_now": false,
+      "closed_overdue": false,
+      "overdue_days": 0,
+      "no_deadline": false,
+      "title": "Закуп Космическое поздравление",
+      "url": "https://avatariya.bitrix24.kz/company/personal/user/207600/tasks/task/view/1267500/"
     }
   ]
 }
